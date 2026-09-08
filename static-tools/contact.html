@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Tools Hub - Get in touch with us for questions, feedback, or support.">
+    <title>Contact — Tools Hub</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Tools <em>Hub</em></a>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="tools.html">All Tools</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()">☰</button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Get in <em>Touch</em></h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Have a question, suggestion, or feedback? We'd love to hear from you.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form id="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="subject">Subject</label>
+                        <select id="subject" name="subject" class="form-select" required>
+                            <option value="">Select a topic...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="feedback">Tool Feedback</option>
+                            <option value="bug">Report a Bug</option>
+                            <option value="suggestion">Feature Suggestion</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us how we can help..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        Send Message →
+                    </button>
+                </form>
+                
+                <!-- Success Message -->
+                <div id="success-message" style="display: none; text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
+                    <h3 style="margin-bottom: 0.5rem;">Message Sent!</h3>
+                    <p style="color: var(--text-secondary);">Thank you for reaching out. We'll get back to you soon.</p>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Other Ways to Reach Us</h3>
+                
+                <div class="contact-item">
+                    <span class="contact-item-icon">📧</span>
+                    <div class="contact-item-text">
+                        <strong>Email</strong><br>
+                        <a href="mailto:hello@toolshub.example">hello@toolshub.example</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-item-icon">⏰</span>
+                    <div class="contact-item-text">
+                        <strong>Response Time</strong><br>
+                        We typically respond within 24-48 hours
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-item-icon">🌍</span>
+                    <div class="contact-item-text">
+                        <strong>Location</strong><br>
+                        Worldwide (Remote Team)
+                    </div>
+                </div>
+
+                <div class="response-time">
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem;">
+                        <strong>💡 Quick Help:</strong> Many common questions are answered in our tool descriptions. 
+                        If you're experiencing a bug, please include your browser type and version in your message.
+                    </p>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Follow Us</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Stay updated with new tools and features.
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" class="form-btn btn-small" style="text-decoration: none;">Twitter/X</a>
+                    <a href="#" class="form-btn btn-small" style="text-decoration: none;">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section style="margin-top: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Frequently Asked <em>Questions</em></h2>
+            
+            <div style="border: 2px solid var(--border-color); margin-bottom: 1rem;">
+                <div style="padding: 1.5rem; background: var(--bg-secondary);">
+                    <strong>Are all tools really free?</strong>
+                </div>
+                <div style="padding: 1.5rem; background: var(--bg-card);">
+                    <p style="color: var(--text-secondary); margin: 0;">Yes! All tools on Tools Hub are completely free to use. There's no signup required, no premium version, and no hidden fees.</p>
+                </div>
+            </div>
+            
+            <div style="border: 2px solid var(--border-color); margin-bottom: 1rem;">
+                <div style="padding: 1.5rem; background: var(--bg-secondary);">
+                    <strong>Is my data safe?</strong>
+                </div>
+                <div style="padding: 1.5rem; background: var(--bg-card);">
+                    <p style="color: var(--text-secondary); margin: 0;">Absolutely. All processing happens locally in your browser. Your text, images, and passwords never leave your device. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+                </div>
+            </div>
+            
+            <div style="border: 2px solid var(--border-color); margin-bottom: 1rem;">
+                <div style="padding: 1.5rem; background: var(--bg-secondary);">
+                    <strong>Can I suggest a new tool?</strong>
+                </div>
+                <div style="padding: 1.5rem; background: var(--bg-card);">
+                    <p style="color: var(--text-secondary); margin: 0;">Of course! We'd love to hear your suggestions. Use the contact form above and select "Feature Suggestion" as the subject.</p>
+                </div>
+            </div>
+            
+            <div style="border: 2px solid var(--border-color);">
+                <div style="padding: 1.5rem; background: var(--bg-secondary);">
+                    <strong>How does Tools Hub make money?</strong>
+                </div>
+                <div style="padding: 1.5rem; background: var(--bg-card);">
+                    <p style="color: var(--text-secondary); margin: 0;">We display advertisements through Google AdSense. This allows us to keep all tools free while covering hosting and development costs.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Tools Hub — A tasteful collection</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer-copy">© 2024 Tools Hub. All tools are free to use.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== DARK MODE =====
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        function getPreferredTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+        
+        setTheme(getPreferredTheme());
+        
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+        });
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            const nav = document.getElementById('nav-links');
+            nav.classList.toggle('active');
+        }
+
+        document.addEventListener('click', (e) => {
+            const nav = document.getElementById('nav-links');
+            const toggle = document.getElementById('menu-toggle');
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // ===== CONTACT FORM =====
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const form = document.getElementById('contact-form');
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Log the submission (in a real app, this would send to a server)
+            console.log('Contact form submitted:', formData);
+            
+            // Show success message
+            form.style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+            
+            // In a real implementation, you would send this data to a server
+            // For now, we'll show an alert
+            alert('Thank you for your message! Since this is a demo, the form data has been logged to the console. In a production environment, this would be sent to a server.');
+        }
+    </script>
+</body>
+</html>

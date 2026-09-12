@@ -331,6 +331,6 @@ pdf-tools-hub/
 
 ## The Copyright Line — License
 
-Copyright © 2024 PDFToolsHub. All rights reserved. Proprietary.
+Copyright © 2026 PDFToolsHub. All rights reserved. Proprietary.
 
 For issues, questions, or contributions, please contact the development team.

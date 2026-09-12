@@ -78,9 +78,18 @@ export default function RootLayout({
                     Colophon
                   </h3>
                   <ul className="space-y-1 text-sm text-inksoft">
-                    <li>— Terms of Service</li>
-                    <li>— Privacy Policy</li>
-                    <li>— How-to Guides</li>
+                    <li>
+                      <Link href="/terms" className="hover:text-vermilion transition">— Terms of Service</Link>
+                    </li>
+                    <li>
+                      <Link href="/privacy" className="hover:text-vermilion transition">— Privacy Policy</Link>
+                    </li>
+                    <li>
+                      <Link href="/about" className="hover:text-vermilion transition">— About Us</Link>
+                    </li>
+                    <li>
+                      <Link href="/contact" className="hover:text-vermilion transition">— Contact Us</Link>
+                    </li>
                   </ul>
                 </div>
               </div>

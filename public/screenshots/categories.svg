@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340">
+  <rect width="1200" height="340" fill="#f3eddd"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- Row 1 -->
+    <g>
+      <rect x="40" y="30" width="360" height="120" fill="#fdfaf0" stroke="#18140d" stroke-width="3"/>
+      <rect x="46" y="36" width="348" height="108" fill="#fdfaf0"/>
+      <text x="70" y="78" font-family="Arial" font-weight="800" font-size="30" fill="#d93a11">bind</text>
+      <text x="70" y="112" font-family="Arial" font-size="15" fill="#18140d">merge · split · rotate · reorder</text>
+      <text x="70" y="132" font-family="Arial" font-size="15" fill="#403a2c">delete · extract · booklet · N-up</text>
+    </g>
+    <g>
+      <rect x="420" y="30" width="360" height="120" fill="#fdfaf0" stroke="#18140d" stroke-width="3"/>
+      <rect x="426" y="36" width="348" height="108" fill="#fdfaf0"/>
+      <text x="450" y="78" font-family="Arial" font-weight="800" font-size="30" fill="#1b3aa3">convert</text>
+      <text x="450" y="112" font-family="Arial" font-size="15" fill="#18140d">PDF ⇄ Office · HTML · text · images</text>
+      <text x="450" y="132" font-family="Arial" font-size="15" fill="#403a2c">images ⇄ PDF · extract-images</text>
+    </g>
+    <g>
+      <rect x="800" y="30" width="360" height="120" fill="#fdfaf0" stroke="#18140d" stroke-width="3"/>
+      <rect x="806" y="36" width="348" height="108" fill="#fdfaf0"/>
+      <text x="830" y="78" font-family="Arial" font-weight="800" font-size="30" fill="#5c6b2a">read</text>
+      <text x="830" y="112" font-family="Arial" font-size="15" fill="#18140d">OCR · pdf-to-text</text>
+      <text x="830" y="132" font-family="Arial" font-size="15" fill="#403a2c">searchable layer, zero system deps</text>
+    </g>
+    <!-- Row 2 -->
+    <g>
+      <rect x="40" y="170" width="360" height="120" fill="#fdfaf0" stroke="#18140d" stroke-width="3"/>
+      <rect x="46" y="176" width="348" height="108" fill="#fdfaf0"/>
+      <text x="70" y="218" font-family="Arial" font-weight="800" font-size="30" fill="#18140d">edit</text>
+      <text x="70" y="252" font-family="Arial" font-size="15" fill="#403a2c">watermark · annotate · metadata</text>
+      <text x="70" y="272" font-family="Arial" font-size="15" fill="#403a2c">page-numbers · redact</text>
+    </g>
+    <g>
+      <rect x="420" y="170" width="360" height="120" fill="#fdfaf0" stroke="#18140d" stroke-width="3"/>
+      <rect x="426" y="176" width="348" height="108" fill="#fdfaf0"/>
+      <text x="450" y="218" font-family="Arial" font-weight="800" font-size="30" fill="#d93a11">secure</text>
+      <text x="450" y="252" font-family="Arial" font-size="15" fill="#403a2c">redact blackout · repair damaged files</text>
+      <text x="450" y="272" font-family="Arial" font-size="15" fill="#403a2c">immutable, verified output</text>
+    </g>
+    <g>
+      <rect x="800" y="170" width="360" height="120" fill="#fdfaf0" stroke="#18140d" stroke-width="3"/>
+      <rect x="806" y="176" width="348" height="108" fill="#fdfaf0"/>
+      <text x="830" y="218" font-family="Arial" font-weight="800" font-size="30" fill="#5c6b2a">quality</text>
+      <text x="830" y="252" font-family="Arial" font-size="15" fill="#403a2c">compress · repair · compare</text>
+      <text x="830" y="272" font-family="Arial" font-size="15" fill="#403a2c">every output verified HTTP 200</text>
+    </g>
+  </g>
+</svg>

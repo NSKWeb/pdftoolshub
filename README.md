@@ -1,38 +1,56 @@
-<div align="center">
+<p align="center">
+  <img src="screenshots/hero.svg" alt="PDFToolsHub — The Magazine of PDF Utility" width="880">
+</p>
 
-# PDFToolsHub
+<h1 align="center">PDFToolsHub</h1>
+<p align="center"><em>The Magazine of PDF Utility</em></p>
+<p align="center"><b>Twenty-six sharp-edged tools for the working press — merge, convert, manage, and publish PDFs from a single editorial workspace.</b></p>
 
-### *The Magazine of PDF Utility*
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js%2015-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js 15">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Tailwind%20CSS%203-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/license-MIT-18140d?style=flat-square" alt="MIT License">
+  <img src="https://img.shields.io/github/actions/workflow/status/NSKWeb/pdftoolshub/ci.yml?style=flat-square&label=CI&logo=github" alt="CI status">
+</p>
 
-**Twenty-six sharp-edged tools for the working press — merge, convert, manage, and publish PDFs from a single editorial workspace.**
-
-![Next.js](https://img.shields.io/badge/Next.js%2015-000000?style=flat-square&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind%20CSS%203-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-18140d?style=flat-square)
-
-`hero` · `production` · `verified`
-
-</div>
+<p align="center"><code>hero</code> · <code>production</code> · <code>verified</code></p>
 
 ---
 
 ## Contents
 
-- [The Paper](#the-paper)
-- [The Type](#the-type)
-- [The Press — 26 Tools](#the-press--26-tools)
-- [The Machinery — Tech Stack](#the-machinery--tech-stack)
-- [The First Edition — Quick Start](#the-first-edition--quick-start)
-- [The Edition Control — API](#the-edition-control--api)
-- [The Fine Print — Configuration](#the-fine-print--configuration)
-- [The Archive — Project Structure](#the-archive--project-structure)
-- [The Colophon — Scripts & Verification](#the-colophon--scripts--verification)
-- [The Copyright Line — License](#the-copyright-line--license)
+- [📸 The Gallery — Live Snapshots](#-the-gallery--live-snapshots)
+- [📰 The Paper](#-the-paper)
+- [🎨 The Type](#-the-type)
+- [🗂 The Press — 26 Tools](#-the-press--26-tools)
+- [⚙️ The Machinery — Tech Stack](#️-the-machinery--tech-stack)
+- [🚀 The First Edition — Quick Start](#-the-first-edition--quick-start)
+- [🔌 The Edition Control — API](#-the-edition-control--api)
+- [📋 The Fine Print — Configuration](#-the-fine-print--configuration)
+- [🧱 The Archive — Project Structure](#-the-archive--project-structure)
+- [✅ The Colophon — Scripts & Verification](#-the-colophon--scripts--verification)
+- [©️ The Copyright Line — License](#️-the-copyright-line--license)
 
 ---
 
-## The Paper
+## 📸 The Gallery — Live Snapshots
+
+<img src="screenshots/home.jpg" alt="PDFToolsHub — landing page" align="right" width="420">
+
+**The landing page.** A newsprint saddle-stitch of tool cards — every utility one click away. The masthead carries the barcode rule, the paper grain is `#f3eddd`, and each card is a hard-offset `neo-card` with its signature `6px 6px 0` ink shadow.
+
+<br clear="both">
+
+| | | |
+|---|---|---|
+| <img src="screenshots/tool-merge.jpg" alt="Merge tool" width="300"> | <img src="screenshots/tool-compress.jpg" alt="Compress tool" width="300"> | <img src="screenshots/auth-login.jpg" alt="Sign in" width="300"> |
+
+<p align="center"><em>Every tool ships its own workbench — upload, configure, process, download. Sign-in unlocks accounts, history, and API keys.</em></p>
+
+---
+
+## 📰 The Paper
 
 **PDFToolsHub** is a production-grade, self-hostable web application that puts twenty-six
 editorial-grade PDF utilities behind one clean, magazine-style interface. Every tool runs
@@ -49,22 +67,23 @@ The interface follows a **Newsprint Magazine** editorial system:
 The whole production-grade rebuild was validated live: **all 26 tools return valid output,
 TypeScript compiles clean, the Jest suite passes, and the production build succeeds.**
 
-```
-┌──────────────────────────────────────────────┐
-│  THE VERMILION EDITION      Vol. XXVI  No. 1  │
-│                                              │
-│  26 TOOLS. ONE PRESS. ZERO HYPE.             │
-│                                              │
-│  merge · split · rotate · compress           │
-│  pdf-to-office · pdf-to-html · pdf-to-text   │
-│  images-to-pdf · pdf-to-images · ocr         │
-│  ...and sixteen more.                        │
-└──────────────────────────────────────────────┘
-```
+---
+
+### How it works
+
+<img src="screenshots/pipeline.svg" alt="Upload → Process → Download pipeline" width="880">
+
+Three steps, no hidden pipeline. Files go in as `multipart/form-data`, each of the 26 editors
+runs in-process (no Ghostscript, no GraphicsMagick, no external binaries), and the finished
+file comes straight back.
+
+- **1 · Upload** — one or many files (`multipart/form-data`)
+- **2 · Process** — `pdf-lib`, `pdfjs-dist`, `tesseract.js`, `@napi-rs/canvas` run in-process
+- **3 · Download** — stored locally, or persisted to S3 / Cloudinary
 
 ---
 
-## The Type
+## 🎨 The Type
 
 | Token | Value | Use |
 |---|---|---|
@@ -82,7 +101,9 @@ TypeScript compiles clean, the Jest suite passes, and the production build succe
 
 ---
 
-## The Press — 26 Tools
+## 🗂 The Press — 26 Tools
+
+<img src="screenshots/categories.svg" alt="Six departments of the press" width="880">
 
 ### Binding & Structure
 
@@ -141,7 +162,7 @@ TypeScript compiles clean, the Jest suite passes, and the production build succe
 
 ---
 
-## The Machinery — Tech Stack
+## ⚙️ The Machinery — Tech Stack
 
 | Layer | Choice | Purpose |
 |---|---|---|
@@ -163,7 +184,7 @@ Ghostscript or GraphicsMagick required — which keeps the app **directly deploy
 
 ---
 
-## The First Edition — Quick Start
+## 🚀 The First Edition — Quick Start
 
 ### Prerequisites
 
@@ -174,8 +195,8 @@ Ghostscript or GraphicsMagick required — which keeps the app **directly deploy
 
 ```bash
 # 1. Clone & install
-git clone <repository-url>
-cd pdf-tools-hub
+git clone https://github.com/NSKWeb/pdftoolshub.git
+cd pdftoolshub
 npm install
 
 # 2. Configure environment
@@ -195,7 +216,7 @@ accounts, file history, and persisted downloads.
 
 ---
 
-## The Edition Control — API
+## 🔌 The Edition Control — API
 
 ### Authentication
 
@@ -246,7 +267,7 @@ The public endpoint is rate-limited at **10 requests / minute per IP**.
 
 ---
 
-## The Fine Print — Configuration
+## 📋 The Fine Print — Configuration
 
 | Variable | Required | Purpose |
 |---|---|---|
@@ -273,7 +294,7 @@ Recommended hosts: a single Linux VPS (any 1 GB box), Railway, Render, or Vercel
 
 ---
 
-## The Archive — Project Structure
+## 🧱 The Archive — Project Structure
 
 ```
 pdf-tools-hub/
@@ -304,16 +325,18 @@ pdf-tools-hub/
 │   │   ├── storage.ts       # S3 / Cloudinary / local
 │   │   ├── api-keys.ts      # public API keys
 │   │   └── tools.ts         # tool registry (slug, name, description)
-│   ├── middleware.ts        # route protection
+│   ├── middleware.ts        # route protection + security headers
 │   └── types/               # shared types
 ├── prisma/                  # schema (accounts, files)
-├── public/                  # static assets
+├── public/
+│   ├── screenshots/         # README visuals (hero, pipeline, categories)
+│   └── manifest.json · robots.txt
 └── .env.example             # environment template
 ```
 
 ---
 
-## The Colophon — Scripts & Verification
+## ✅ The Colophon — Scripts & Verification
 
 | Script | Description |
 |---|---|
@@ -331,10 +354,11 @@ pdf-tools-hub/
 - ✅ `npm test` — 9 / 9 passing
 - ✅ `npm run build` — success
 - ✅ Live smoke test — 26 / 26 tools return `HTTP 200` with valid output
+- ✅ GitHub Actions — Typecheck · Test · Build green on every push
 
 ---
 
-## The Copyright Line — License
+## ©️ The Copyright Line — License
 
 MIT licensed — Copyright © 2026 NSKWeb. See [`LICENSE`](./LICENSE) for the full text.
 

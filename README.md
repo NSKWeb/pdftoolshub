@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshots/hero.svg" alt="PDFToolsHub — The Magazine of PDF Utility" width="880">
+  <img src="public/screenshots/hero.svg" alt="PDFToolsHub — The Magazine of PDF Utility" width="880">
 </p>
 
 <h1 align="center">PDFToolsHub</h1>
@@ -36,7 +36,7 @@
 
 ## 📸 The Gallery — Live Snapshots
 
-<img src="screenshots/home.jpg" alt="PDFToolsHub — landing page" align="right" width="420">
+<img src="public/screenshots/home.jpg" alt="PDFToolsHub — landing page" align="right" width="420">
 
 **The landing page.** A newsprint saddle-stitch of tool cards — every utility one click away. The masthead carries the barcode rule, the paper grain is `#f3eddd`, and each card is a hard-offset `neo-card` with its signature `6px 6px 0` ink shadow.
 
@@ -44,7 +44,7 @@
 
 | | | |
 |---|---|---|
-| <img src="screenshots/tool-merge.jpg" alt="Merge tool" width="300"> | <img src="screenshots/tool-compress.jpg" alt="Compress tool" width="300"> | <img src="screenshots/auth-login.jpg" alt="Sign in" width="300"> |
+| <img src="public/screenshots/tool-merge.jpg" alt="Merge tool" width="300"> | <img src="public/screenshots/tool-compress.jpg" alt="Compress tool" width="300"> | <img src="public/screenshots/auth-login.jpg" alt="Sign in" width="300"> |
 
 <p align="center"><em>Every tool ships its own workbench — upload, configure, process, download. Sign-in unlocks accounts, history, and API keys.</em></p>
 
@@ -71,7 +71,7 @@ TypeScript compiles clean, the Jest suite passes, and the production build succe
 
 ### How it works
 
-<img src="screenshots/pipeline.svg" alt="Upload → Process → Download pipeline" width="880">
+<img src="public/screenshots/pipeline.svg" alt="Upload → Process → Download pipeline" width="880">
 
 Three steps, no hidden pipeline. Files go in as `multipart/form-data`, each of the 26 editors
 runs in-process (no Ghostscript, no GraphicsMagick, no external binaries), and the finished
@@ -103,7 +103,7 @@ file comes straight back.
 
 ## 🗂 The Press — 26 Tools
 
-<img src="screenshots/categories.svg" alt="Six departments of the press" width="880">
+<img src="public/screenshots/categories.svg" alt="Six departments of the press" width="880">
 
 ### Binding & Structure
 

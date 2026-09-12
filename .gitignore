@@ -71,3 +71,6 @@ coverage
 *.tgz
 .vercel
 .netlify
+
+# TypeScript build info
+*.tsbuildinfo

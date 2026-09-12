@@ -54,7 +54,7 @@ describe('PDF Tools', () => {
 
   describe('split', () => {
     it('should split PDF pages', async () => {
-      const pdf = await createTestPdf('Test');
+      const pdf = await createTestPdf('Test', 2);
       
       const result = await processPdfTool({
         tool: 'split',

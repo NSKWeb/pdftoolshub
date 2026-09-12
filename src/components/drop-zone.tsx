@@ -36,10 +36,10 @@ export function DropZone({ onFilesDrop, accept = '*', maxFiles = 10, children }:
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
       className={`
-        relative border-2 border-dashed rounded-xl p-8 text-center transition
-        ${isDragOver 
-          ? 'border-accent bg-accent/10' 
-          : 'border-slate-600 hover:border-slate-500'
+        relative border-3 border-dashed border-ink rounded-sm p-10 text-center transition bg-cream
+        ${isDragOver
+          ? 'bg-vermilion/15 shadow-offset-sm'
+          : 'hover:bg-cream/70'
         }
       `}
       role="button"

@@ -2,13 +2,15 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function AuthForm({ mode }: { mode: "login" | "register" }) {
   const router = useRouter();
   const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const submitLabel = mode === "login" ? "Sign in" : "Create account";
+  const isLogin = mode === "login";
+  const submitLabel = isLogin ? "Sign In" : "Create Account";
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -31,7 +33,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
     if (res.ok) {
       setStatus({ type: "success", message: data.message ?? "Success" });
       setTimeout(() => {
-        router.push("/dashboard");
+        router.push("/");
         router.refresh();
       }, 500);
     } else {
@@ -40,42 +42,66 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="gradient-border rounded-xl bg-panel p-6 space-y-4">
+    <form onSubmit={handleSubmit} className="neo-card rounded-sm p-8 space-y-5">
       <div>
-        <h2 className="text-2xl font-semibold">{submitLabel}</h2>
-        <p className="text-slate-400 text-sm">
-          {mode === "login" ? "Welcome back to Dittopdf." : "Start processing your PDFs instantly."}
+        <div className="eyebrow">{isLogin ? "Subscribers" : "New Byline"}</div>
+        <h2 className="font-display text-3xl font-black tracking-tight mt-1">{submitLabel}</h2>
+        <p className="text-inksoft text-sm mt-2">
+          {isLogin
+            ? "Welcome back to the newsroom. The tools work without an account — signing in just unlocks unlimited."
+            : "Start processing your PDFs instantly. The tools stay free; an account just ups your allowance."}
         </p>
       </div>
-      <div className="space-y-3">
-        <input
-          name="email"
-          type="email"
-          placeholder="Email address"
-          required
-          className="w-full rounded-md bg-slate-900 border border-slate-700 px-3 py-2 focus:border-accent focus:outline-none transition"
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          required
-          minLength={8}
-          className="w-full rounded-md bg-slate-900 border border-slate-700 px-3 py-2 focus:border-accent focus:outline-none transition"
-        />
+      <div className="space-y-4">
+        <div>
+          <label htmlFor="email" className="font-display font-bold text-sm block mb-1.5">
+            Email address
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="reader@example.com"
+            required
+            className="neo-input rounded-sm !shadow-offset-sm"
+          />
+        </div>
+        <div>
+          <label htmlFor="password" className="font-display font-bold text-sm block mb-1.5">
+            Password
+          </label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="••••••••"
+            required
+            minLength={8}
+            className="neo-input rounded-sm !shadow-offset-sm"
+          />
+        </div>
       </div>
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-md bg-accent text-slate-900 font-medium py-2 disabled:opacity-60 hover:opacity-90 transition"
+        className="neo-btn neo-btn-accent w-full rounded-sm"
       >
         {loading ? "Processing..." : submitLabel}
       </button>
       {status && (
-        <p className={`text-sm ${status.type === "success" ? "text-green-400" : "text-red-400"}`}>
+        <p className={`text-sm font-medium ${status.type === "success" ? "text-olive" : "text-vermilion"}`}>
           {status.message}
         </p>
       )}
+      <p className="text-xs text-phantom text-center">
+        {isLogin ? "New to the sheet? " : "Already a subscriber? "}
+        <Link
+          href={isLogin ? "/auth/register" : "/auth/login"}
+          className="text-vermilion font-bold hover:underline"
+        >
+          {isLogin ? "Create an account" : "Sign in"}
+        </Link>
+      </p>
     </form>
   );
 }

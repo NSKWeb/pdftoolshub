@@ -18,9 +18,10 @@ export function verifyToken(token: string) {
 }
 
 export async function getAuthUser(): Promise<AuthUser | null> {
-  const headerList = headers();
+  const headerList = await headers();
   const auth = headerList.get("authorization");
-  const cookieToken = cookies().get("token")?.value;
+  const cookieStore = await cookies();
+  const cookieToken = cookieStore.get("token")?.value;
   const token = auth?.startsWith("Bearer ") ? auth.replace("Bearer ", "") : cookieToken;
 
   if (!token) {

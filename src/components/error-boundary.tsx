@@ -23,22 +23,25 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    logger.error({ error: error.message, errorInfo }, 'React error boundary caught error');
+    logger.error("React error boundary caught error", {
+      error: error.message,
+      errorInfo
+    });
   }
 
   public render() {
     if (this.state.hasError) {
       return this.props.fallback || (
         <div className="p-8 text-center" role="alert" aria-live="assertive">
-          <h2 className="text-xl font-semibold text-red-400 mb-2">
+          <h2 className="font-display text-xl font-bold text-vermilion mb-2">
             Something went wrong
           </h2>
-          <p className="text-slate-400 mb-4">
+          <p className="text-inksoft mb-4">
             We apologize for the inconvenience. Please try refreshing the page.
           </p>
           <button
             onClick={() => this.setState({ hasError: false })}
-            className="px-4 py-2 bg-accent text-slate-900 rounded-md font-medium"
+            className="neo-btn neo-btn-accent rounded-sm"
           >
             Try again
           </button>

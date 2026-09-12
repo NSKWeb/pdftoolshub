@@ -4,24 +4,29 @@ import { getLocalFileEntry, getLocalFilePath, isLocalStorageEnabled } from "@/li
 
 export const runtime = "nodejs";
 
-export async function GET(_: Request, { params }: { params: { key: string } }) {
+export async function GET(
+  _request: Request,
+  { params }: { params: Promise<{ key: string }> }
+) {
+  const { key } = await params;
+
   if (!isLocalStorageEnabled()) {
-    return NextResponse.json({ message: "Downloads are unavailable" }, { status: 404 });
+    return NextResponse.json({ message: "Not found" }, { status: 404 });
   }
 
-  const entry = getLocalFileEntry(params.key);
-  const filePath = entry?.path ?? getLocalFilePath(params.key);
+  const entry = getLocalFileEntry(key);
+  const filePath = getLocalFilePath(key);
 
   try {
-    const fileBuffer = await fs.readFile(filePath);
-    return new NextResponse(fileBuffer, {
-      status: 200,
+    const buffer = await fs.readFile(filePath);
+    return new NextResponse(buffer, {
       headers: {
         "Content-Type": entry?.contentType ?? "application/octet-stream",
-        "Content-Disposition": `attachment; filename="${params.key}"`
+        "Content-Disposition": `attachment; filename="${encodeURIComponent(key)}"`,
+        "Cache-Control": "private, no-store"
       }
     });
   } catch {
-    return NextResponse.json({ message: "File not found" }, { status: 404 });
+    return NextResponse.json({ message: "File not found or expired" }, { status: 404 });
   }
 }

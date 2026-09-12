@@ -49,18 +49,18 @@ export function Navigation() {
 
   return (
     <nav className="flex items-center gap-4 lg:gap-6 text-sm">
-      <Link className="hover:text-white transition hidden sm:block" href="/">
+      <Link className="hidden sm:block font-medium hover:text-vermilion transition" href="/">
         Tools
       </Link>
-      <Link className="hover:text-white transition hidden sm:block" href="/dashboard">
-        Dashboard
+      <Link className="hidden sm:block font-medium hover:text-vermilion transition" href="/#fine-print">
+        Pricing
       </Link>
 
       {user ? (
         <div className="relative">
           <button
             onClick={() => setUserMenuOpen(!userMenuOpen)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 transition"
+            className="neo-btn !py-1.5 !px-3 !text-xs rounded-sm"
           >
             <span className="w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center text-xs font-medium">
               {user.email[0].toUpperCase()}
@@ -81,22 +81,15 @@ export function Navigation() {
                 className="fixed inset-0 z-10"
                 onClick={() => setUserMenuOpen(false)}
               />
-              <div className="absolute right-0 mt-2 w-48 bg-panel border border-slate-700 rounded-lg shadow-lg py-1 z-20">
-                <div className="px-3 py-2 border-b border-slate-700">
-                  <p className="text-xs text-slate-400">Signed in as</p>
+              <div className="absolute right-0 mt-2 w-56 bg-cream border-2 border-ink shadow-offset z-20 py-1">
+                <div className="px-3 py-2 border-b-2 border-ink">
+                  <p className="text-xs eyebrow">Signed in as</p>
                   <p className="text-sm font-medium truncate">{user.email}</p>
                   <p className="text-xs text-accent mt-1">{user.planType} plan</p>
                 </div>
-                <Link
-                  href="/dashboard"
-                  className="block px-3 py-2 text-sm hover:bg-slate-700 transition"
-                  onClick={() => setUserMenuOpen(false)}
-                >
-                  Dashboard
-                </Link>
                 <button
                   onClick={handleLogout}
-                  className="w-full text-left px-3 py-2 text-sm text-red-400 hover:bg-slate-700 transition"
+                  className="w-full text-left px-3 py-2 text-sm text-vermilion hover:bg-paper transition"
                 >
                   Sign out
                 </button>
@@ -107,7 +100,7 @@ export function Navigation() {
       ) : (
         !loading && (
           <Link
-            className="px-4 py-1.5 rounded-md bg-accent text-slate-900 font-medium hover:opacity-90 transition"
+            className="dept-tag !border-ink shadow-offset-sm !text-[0.7rem] hover:bg-vermilion hover:text-cream transition"
             href="/auth/login"
           >
             Sign In
@@ -125,25 +118,25 @@ export function Navigation() {
       </button>
 
       {mobileMenuOpen && (
-        <div className="fixed top-[73px] left-0 right-0 bg-panel border-b border-slate-800 p-4 z-50 space-y-2 lg:hidden">
-          <Link className="block py-2 hover:text-white transition" href="/">
+        <div className="fixed top-[73px] left-0 right-0 bg-cream border-b-4 border-ink p-4 z-50 space-y-2 lg:hidden shadow-offset">
+          <Link className="block py-2 font-display font-bold hover:text-vermilion transition" href="/">
             Tools
           </Link>
-          <Link className="block py-2 hover:text-white transition" href="/dashboard">
-            Dashboard
+          <Link className="block py-2 font-display font-bold hover:text-vermilion transition" href="/#fine-print">
+            Pricing
           </Link>
           {user ? (
             <>
-              <p className="py-2 text-xs text-slate-400">{user.email}</p>
+              <p className="py-2 text-xs text-phantom">{user.email}</p>
               <button
                 onClick={handleLogout}
-                className="block w-full text-left py-2 text-red-400"
+                className="block w-full text-left py-2 text-vermilion"
               >
                 Sign out
               </button>
             </>
           ) : (
-            <Link className="block py-2 text-accent" href="/auth/login">
+            <Link className="block py-2 text-vermilion font-display font-bold" href="/auth/login">
               Sign In
             </Link>
           )}

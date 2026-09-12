@@ -1,27 +1,31 @@
-import winston from 'winston';
+type LogMeta = Record<string, unknown>;
 
-const { combine, timestamp, json, errors } = winston.format;
+function jsonMeta(meta?: LogMeta): string {
+  if (!meta) return "";
+  try {
+    return ` ${JSON.stringify(meta)}`;
+  } catch {
+    return "";
+  }
+}
 
-export const logger = winston.createLogger({
-  level: process.env.LOG_LEVEL || 'info',
-  defaultMeta: { service: 'dittopdf' },
-  format: combine(
-    timestamp(),
-    errors({ stack: true }),
-    json()
-  ),
-  transports: [
-    new winston.transports.Console({
-      format: process.env.NODE_ENV === 'development' 
-        ? winston.format.combine(
-            winston.format.colorize(),
-            winston.format.simple()
-          )
-        : undefined
-    })
-  ]
-});
+export const logger = {
+  info: (message: string, meta?: LogMeta) =>
+    console.info(`[info] ${message}${jsonMeta(meta)}`),
+  warn: (message: string, meta?: LogMeta) =>
+    console.warn(`[warn] ${message}${jsonMeta(meta)}`),
+  error: (message: string, meta?: LogMeta) =>
+    console.error(`[error] ${message}${jsonMeta(meta)}`)
+};
 
 export function createRequestLogger(requestId: string) {
-  return logger.child({ requestId });
+  const prefix = `[req:${requestId}]`;
+  return {
+    info: (meta: LogMeta, message: string) =>
+      logger.info(`${prefix} ${message}`, meta),
+    warn: (meta: LogMeta, message: string) =>
+      logger.warn(`${prefix} ${message}`, meta),
+    error: (meta: LogMeta, message: string) =>
+      logger.error(`${prefix} ${message}`, meta)
+  };
 }

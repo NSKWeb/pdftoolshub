@@ -65,7 +65,7 @@ export async function uploadFile({
       {
         public_id: safeKey,
         resource_type: "auto",
-        folder: "dittopdf",
+        folder: "pdftoolshub",
         overwrite: true
       }
     );

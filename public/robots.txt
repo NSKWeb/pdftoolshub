@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dittopdf.com/sitemap.xml
+# PDFToolsHub — The Magazine of PDF Utility

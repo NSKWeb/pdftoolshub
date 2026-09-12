@@ -1,8 +1,7 @@
-import { AdSlot } from "@/components/ad-slot";
-
 const toolCategories = [
   {
     name: "Basic Tools",
+    tagline: "The essentials.",
     tools: [
       { name: "Merge PDFs", slug: "merge", description: "Combine multiple PDFs into one" },
       { name: "Split PDF", slug: "split", description: "Extract pages or ranges" },
@@ -15,6 +14,7 @@ const toolCategories = [
   },
   {
     name: "Convert Tools",
+    tagline: "Transfigurations.",
     tools: [
       { name: "PDF to Text", slug: "pdf-to-text", description: "Extract text from PDF" },
       { name: "PDF to Images", slug: "pdf-to-images", description: "Export as JPG or PNG" },
@@ -26,6 +26,7 @@ const toolCategories = [
   },
   {
     name: "Edit Tools",
+    tagline: "The red pencil.",
     tools: [
       { name: "Text Watermark", slug: "watermark-text", description: "Add text watermark" },
       { name: "Image Watermark", slug: "watermark-image", description: "Add image/logo watermark" },
@@ -36,12 +37,14 @@ const toolCategories = [
   },
   {
     name: "Security/Privacy",
+    tagline: "The vault.",
     tools: [
       { name: "Redact PDF", slug: "redact", description: "Black out sensitive areas" }
     ]
   },
   {
     name: "Advanced Tools",
+    tagline: "The deep shelf.",
     tools: [
       { name: "Compare PDFs", slug: "compare", description: "Compare two PDFs" },
       { name: "Flatten PDF", slug: "flatten", description: "Remove interactivity" },
@@ -57,112 +60,111 @@ const toolCategories = [
 export default function HomePage() {
   return (
     <section className="px-4 sm:px-6 py-8 max-w-7xl mx-auto">
-      <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
+      <div className="grid gap-10 lg:grid-cols-[1fr_300px]">
         <div className="space-y-12">
-          <div className="space-y-6">
-            <h1 className="text-4xl sm:text-5xl font-semibold">
-              All-in-one PDF suite for modern teams
+          {/* Cover story — the declaration */}
+          <div className="space-y-5">
+            <div className="dept-tag">The Tool Issue · Vol. 26</div>
+            <h1 className="font-display text-5xl sm:text-7xl font-black leading-[0.95] tracking-tight">
+              Every document,
+              <br />
+              <span className="bg-vermilion text-cream px-3 -rotate-1 inline-block">
+                set free.
+              </span>
             </h1>
-            <p className="text-slate-300 max-w-2xl text-lg">
-              Convert, compress, edit, and manage your documents in one secure workspace. 
-              All 24 PDF tools are production-ready and free to use.
+            <p className="text-inksoft max-w-2xl text-lg font-body">
+              Convert, compress, edit, and manage your documents in one secure
+              workspace. Twenty-six tools, no sign-up, free forever.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 text-sm text-green-400">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                24 PDF Tools
-              </div>
-              <div className="flex items-center gap-2 text-sm text-green-400">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Free to Use
-              </div>
-              <div className="flex items-center gap-2 text-sm text-green-400">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                No Sign-up Required
-              </div>
-              <div className="flex items-center gap-2 text-sm text-green-400">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Secure & Private
-              </div>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {["26 PDF Tools", "Free Forever", "No Sign-up Required", "Secure & Private"].map(
+                (item) => (
+                  <span key={item} className="dept-tag !border-ink !shadow-offset-sm">
+                    {item}
+                  </span>
+                )
+              )}
             </div>
           </div>
 
-          {toolCategories.map((category) => (
+          {toolCategories.map((category, idx) => (
             <div key={category.name} className="space-y-4">
-              <h2 className="text-2xl font-semibold">{category.name}</h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {category.tools.map((tool) => (
+              <div className="flex items-end justify-between gap-4 border-b-4 border-ink pb-2">
+                <h2 className="font-display text-3xl font-bold tracking-tight">
+                  {category.name}
+                </h2>
+                <span className="eyebrow hidden sm:block">{category.tagline}</span>
+              </div>
+              <div className="grid gap-5 sm:grid-cols-2">
+                {category.tools.map((tool, toolIdx) => (
                   <a
                     key={tool.slug}
                     href={`/tools/${tool.slug}`}
-                    className="gradient-border rounded-xl p-5 bg-panel hover:border-accent transition group"
+                    className="neo-card rounded-sm p-5"
                   >
-                    <div className="text-lg font-medium group-hover:text-accent transition">
-                      {tool.name}
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="font-display text-lg font-bold leading-tight">
+                        {tool.name}
+                      </div>
+                      <span className="font-display text-xs text-phantom whitespace-nowrap border border-ink px-1.5 py-0.5">
+                        {String(toolIdx + 1).padStart(2, "0")}
+                      </span>
                     </div>
-                    <p className="text-sm text-slate-400 mt-1">{tool.description}</p>
-                    <div className="text-xs text-accent mt-2 opacity-0 group-hover:opacity-100 transition">
-                      Get started →
+                    <p className="text-sm text-inksoft mt-2">{tool.description}</p>
+                    <div className="text-sm font-display font-semibold text-vermilion mt-3">
+                      Open →
                     </div>
                   </a>
                 ))}
               </div>
+              {idx === 0 && <div className="barcode" aria-hidden="true" />}
             </div>
           ))}
         </div>
 
-        <div className="space-y-4 lg:mt-16">
-          <AdSlot position="sidebar" />
-          <div className="gradient-border rounded-xl p-5 bg-panel space-y-4">
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-slate-500">Free Plan</div>
-              <p className="mt-2 text-2xl font-semibold">5 files / day</p>
-              <p className="text-sm text-slate-400 mt-1">Perfect for occasional use</p>
-            </div>
-            <div className="h-px bg-slate-700" />
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-accent">Pro Plan</div>
-              <p className="mt-2 text-2xl font-semibold text-accent">Unlimited</p>
-              <p className="text-sm text-slate-400 mt-1">For power users and teams</p>
+        {/* Right rail — the cover lines of the issue */}
+        <div className="space-y-6 lg:pt-10">
+          <div id="fine-print" className="neo-card rounded-sm p-5 space-y-4 scroll-mt-24">
+            <div className="eyebrow">The Fine Print</div>
+            <div className="space-y-4">
+              <div className="border-l-4 border-vermilion pl-3">
+                <div className="font-display text-2xl font-bold">Free Plan</div>
+                <p className="text-sm text-inksoft">5 files / day — perfect for occasional use</p>
+              </div>
+              <div className="border-l-4 border-cobalt pl-3">
+                <div className="font-display text-2xl font-bold text-cobalt">Pro Plan</div>
+                <p className="text-sm text-inksoft">Unlimited — for power users and teams</p>
+              </div>
             </div>
           </div>
 
-          <div className="gradient-border rounded-xl p-5 bg-panel text-xs text-slate-400">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-3">Features</div>
+          <div className="neo-card rounded-sm p-5 text-sm text-inksoft">
+            <div className="eyebrow mb-3">House Rules</div>
             <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>Max 25MB file size</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>Local file processing</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>1-hour file retention</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>No account required</span>
-              </li>
+              {[
+                "Max 25MB file size",
+                "Local file processing",
+                "1-hour file retention",
+                "No account required"
+              ].map((rule) => (
+                <li key={rule} className="flex items-start gap-2">
+                  <span className="text-vermilion font-bold" aria-hidden="true">
+                    ✓
+                  </span>
+                  <span>{rule}</span>
+                </li>
+              ))}
             </ul>
+          </div>
+
+          <div className="neo-card bg-ink text-cream rounded-sm p-5">
+            <div className="eyebrow !text-cream/70 mb-2">Readers’ Poll</div>
+            <p className="font-display text-xl font-bold leading-snug">
+              “The fastest sheet in the West.”
+            </p>
+            <p className="text-cream/70 text-xs mt-3">
+              — A satisfied reader, on Merge PDFs
+            </p>
           </div>
         </div>
       </div>

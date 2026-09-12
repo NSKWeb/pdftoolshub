@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ToolUploadForm } from '@/components/tool-upload-form';
 
@@ -19,15 +19,15 @@ describe('ToolUploadForm', () => {
   it('shows error for invalid file type', async () => {
     const user = userEvent.setup();
     render(<ToolUploadForm tool="merge" />);
-    
+
     const file = new File(['test'], 'test.txt', { type: 'text/plain' });
-    const input = screen.getByLabelText(/file upload input/i);
-    
-    await user.upload(input, file);
-    await user.click(screen.getByRole('button', { name: /run tool/i }));
-    
+    const dropZone = screen.getByRole('button', { name: /drop files here or click to upload/i });
+    const dataTransfer = { files: [file] } as unknown as DataTransfer;
+
+    await fireEvent.drop(dropZone, { dataTransfer });
+
     await waitFor(() => {
-      expect(screen.getByText(/please select at least one file/i)).toBeInTheDocument();
+      expect(screen.getByText(/please select at least one supported file/i)).toBeInTheDocument();
     });
   });
 

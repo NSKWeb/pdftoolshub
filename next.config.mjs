@@ -4,6 +4,7 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   productionBrowserSourceMaps: false,
+  serverExternalPackages: ["@napi-rs/canvas", "tesseract.js", "tesseract.js-core"],
   experimental: {
     serverActions: {
       allowedOrigins: [process.env.NEXT_PUBLIC_SITE_URL || 'localhost:3000']

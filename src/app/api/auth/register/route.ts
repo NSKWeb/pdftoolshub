@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import { prisma } from "@/lib/prisma";
-import { rateLimit } from "@/lib/rate-limit";
-import { getClientId } from "@/lib/request";
+import { getDb } from "@/lib/db";
+import { rateLimitWithRequest } from "@/lib/rate-limit";
 import { signToken } from "@/lib/session";
 
 export async function POST(request: Request) {
-  const limiter = rateLimit(getClientId(), 5, 60_000);
+  const limiter = rateLimitWithRequest(request, 5, 60_000);
   if (!limiter.allowed) {
     return NextResponse.json({ message: "Too many requests" }, { status: 429 });
   }
@@ -16,13 +15,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "Email and password required" }, { status: 400 });
   }
 
-  const existing = await prisma.users.findUnique({ where: { email } });
+  const db = await getDb();
+  if (!db) {
+    return NextResponse.json(
+      { message: "Registration is disabled. Set a DATABASE_URL to enable accounts." },
+      { status: 503 }
+    );
+  }
+
+  const existing = await db.users.findUnique({ where: { email } });
   if (existing) {
     return NextResponse.json({ message: "Email already registered" }, { status: 409 });
   }
 
   const passwordHash = await bcrypt.hash(password, 12);
-  const user = await prisma.users.create({
+  const user = await db.users.create({
     data: { email, passwordHash }
   });
 

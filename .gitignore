@@ -65,6 +65,7 @@ coverage
 .parcel-cache
 .eslintcache
 .stylelintcache
+.swc
 
 # Misc
 *.log

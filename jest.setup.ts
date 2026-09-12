@@ -9,24 +9,6 @@ declare global {
   }
 }
 
-jest.mock('pdf-parse', () => ({
-  __esModule: true,
-  default: jest.fn(() => Promise.resolve({
-    text: 'Sample PDF text content',
-    numpages: 2,
-    info: { Title: 'Test PDF' }
-  }))
-}));
-
-jest.mock('pdf2pic', () => ({
-  fromBuffer: jest.fn(() => ({
-    bulk: jest.fn(() => Promise.resolve([
-      { base64: 'base64encodedstring1' },
-      { base64: 'base64encodedstring2' }
-    ]))
-  }))
-}));
-
 // pdf-render uses pdfjs-dist ESM + native canvas — heavy for unit tests.
 // Mock it so the processing core can be exercised without a worker thread.
 jest.mock('@/lib/pdf-render', () => ({

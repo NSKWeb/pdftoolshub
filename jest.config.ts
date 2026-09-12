@@ -19,7 +19,7 @@ const config: Config = {
     '!src/app/api/v*/**/*',
   ],
   transformIgnorePatterns: [
-    '/node_modules/(?!pdf-parse|pdf2pic|docx|pako|jszip)',
+    '/node_modules/(?!docx|pako|jszip)',
   ],
 };
 

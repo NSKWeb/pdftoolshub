@@ -9,7 +9,7 @@
 ![Next.js](https://img.shields.io/badge/Next.js%2015-000000?style=flat-square&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind%20CSS%203-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![License](https://img.shields.io/badge/license-Proprietary-18140d?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-18140d?style=flat-square)
 
 `hero` · `production` · `verified`
 
@@ -257,14 +257,19 @@ The public endpoint is rate-limited at **10 requests / minute per IP**.
 | `PUBLIC_API_KEY` | for public API | Authenticates `/api/public/process` |
 | `TESSERACT_DATA_DIR` | optional | Pre-seeded OCR language data (avoids first-run download) |
 
-**Deployment**
+**Deployment — one VPS, everything included**
 
 ```bash
 npm run build     # production build
 npm run start     # serve on :3000
 ```
 
-Recommended hosts: a single VPS (any Linux box), Railway, Render, or Vercel.
+A complete step-by-step VPS guide (Ubuntu, systemd, nginx, HTTPS, Postgres) lives in
+[`DEPLOY.md`](./DEPLOY.md). Ready-to-use systemd unit, nginx config, and a rebuild
+script ship in [`deploy/`](./deploy/). CI (Typecheck → Tests → Build) runs on every
+push via GitHub Actions — see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
+
+Recommended hosts: a single Linux VPS (any 1 GB box), Railway, Render, or Vercel.
 
 ---
 
@@ -331,6 +336,6 @@ pdf-tools-hub/
 
 ## The Copyright Line — License
 
-Copyright © 2026 PDFToolsHub. All rights reserved. Proprietary.
+MIT licensed — Copyright © 2026 NSKWeb. See [`LICENSE`](./LICENSE) for the full text.
 
-For issues, questions, or contributions, please contact the development team.
+For issues, questions, or contributions, please open an issue in this repository.

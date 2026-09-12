@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="300" viewBox="0 0 1024 300">
+  <defs>
+    <pattern id="c-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#18140d" opacity="0.08"/>
+    </pattern>
+    <linearGradient id="c-paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdfaf0"/>
+      <stop offset="1" stop-color="#f3eddd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="300" fill="url(#c-paper)"/>
+  <rect width="1024" height="300" fill="url(#c-dots)"/>
+  <rect x="20" y="20" width="984" height="260" fill="#18140d"/>
+  <rect x="24" y="24" width="976" height="252" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+
+  <line x1="48" y1="64" x2="976" y2="64" stroke="#d93a11" stroke-width="3"/>
+  <text x="48" y="52" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="17" fill="#18140d">LETTERS TO THE EDITOR</text>
+  <text x="976" y="54" text-anchor="end" font-family="'Courier New', monospace" font-size="13" fill="#746b56" letter-spacing="1">BOX · 26</text>
+
+  <!-- envelope -->
+  <g transform="translate(60,90)">
+    <rect width="240" height="150" fill="#fdfaf0" stroke="#18140d" stroke-width="2.5"/>
+    <path d="M0 0 L120 86 L240 0" fill="none" stroke="#18140d" stroke-width="2.5"/>
+    <path d="M0 0 L120 86 L240 0" fill="#403a2c" opacity="0.12"/>
+    <!-- stamp -->
+    <rect x="196" y="16" width="30" height="36" fill="#d93a11"/>
+    <path d="M196 16 L226 16 L226 52 L211 44 L196 52 Z" fill="#fdfaf0" opacity="0.5"/>
+    <!-- address lines -->
+    <g fill="#403a2c" opacity="0.6">
+      <rect x="52" y="108" width="120" height="6"/>
+      <rect x="52" y="120" width="100" height="6"/>
+      <rect x="52" y="132" width="116" height="6"/>
+    </g>
+  </g>
+
+  <!-- postmark stamp -->
+  <g transform="translate(360,96)" stroke="#18140d" stroke-width="3" fill="none">
+    <circle cx="0" cy="0" r="52"/>
+    <circle cx="0" cy="0" r="44" opacity="0.5"/>
+    <circle cx="0" cy="0" r="36" opacity="0.35"/>
+    <path d="M-52 0 A52 52 0 0 1 52 0" stroke="#d93a11"/>
+  </g>
+  <g transform="translate(300,60)" fill="#d93a11">
+    <text x="0" y="0" font-family="'Courier New', monospace" font-weight="bold" font-size="90" text-anchor="middle">✉</text>
+  </g>
+
+  <!-- speech bubble / mail icon -->
+  <g transform="translate(520,76)">
+    <rect width="230" height="120" rx="14" fill="#403a2c"/>
+    <polygon points="40,120 28,152 72,120" fill="#403a2c"/>
+    <path d="M22 24 L22 92 L52 92 L52 112 L78 92 L208 92 L208 24 Z" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <g fill="#403a2c" opacity="0.55">
+      <rect x="36" y="40" width="140" height="7"/>
+      <rect x="36" y="56" width="120" height="7"/>
+      <rect x="36" y="72" width="150" height="7"/>
+    </g>
+  </g>
+
+  <!-- paper plane -->
+  <g transform="translate(800,120)">
+    <path d="M0 60 L160 20 L120 90 L80 80 L64 110 L50 84 Z" fill="#d93a11" stroke="#18140d" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M64 110 L80 80 L50 84 Z" fill="#fdfaf0" stroke="#18140d" stroke-width="1.5"/>
+    <line x1="120" y1="90" x2="108" y2="82" stroke="#a82c0c" stroke-width="2"/>
+  </g>
+
+  <g fill="#18140d" transform="translate(48,226)">
+    <rect width="3" height="34" opacity="0.9"/>
+    <rect x="7" width="5" height="34" opacity="0.85"/>
+    <rect x="16" width="2" height="34" opacity="0.7"/>
+    <rect x="22" width="5" height="34" opacity="0.9"/>
+    <rect x="31" width="3" height="34" opacity="0.75"/>
+    <rect x="38" width="6" height="34" opacity="0.9"/>
+    <rect x="48" width="2" height="34" opacity="0.7"/>
+    <rect x="54" width="4" height="34" opacity="0.85"/>
+    <rect x="62" width="5" height="34" opacity="0.9"/>
+    <rect x="71" width="3" height="34" opacity="0.75"/>
+    <rect x="78" width="2" height="34" opacity="0.7"/>
+    <rect x="84" width="6" height="34" opacity="0.9"/>
+    <rect x="94" width="3" height="34" opacity="0.8"/>
+  </g>
+  <text x="48" y="276" font-family="'Courier New', monospace" font-size="11" fill="#746b56" letter-spacing="2">DROP US A LINE · CHIEFLY INK ON PAPER</text>
+  <text x="976" y="276" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="14" fill="#403a2c">Open letters &amp; open issues</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="300" viewBox="0 0 1024 300">
+  <defs>
+    <pattern id="a-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#18140d" opacity="0.08"/>
+    </pattern>
+    <linearGradient id="a-paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdfaf0"/>
+      <stop offset="1" stop-color="#f3eddd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="300" fill="url(#a-paper)"/>
+  <rect width="1024" height="300" fill="url(#a-dots)"/>
+  <rect x="20" y="20" width="984" height="260" fill="#18140d"/>
+  <rect x="24" y="24" width="976" height="252" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+
+  <line x1="48" y1="64" x2="976" y2="64" stroke="#d93a11" stroke-width="3"/>
+  <text x="48" y="52" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="17" fill="#18140d">THE MASTHEAD</text>
+  <text x="976" y="54" text-anchor="end" font-family="'Courier New', monospace" font-size="13" fill="#746b56" letter-spacing="1">VOL · XXVI</text>
+
+  <!-- printing press rollers -->
+  <g transform="translate(60,120)">
+    <rect x="0" y="96" width="300" height="18" fill="#18140d"/>
+    <rect x="0" y="96" width="300" height="6" fill="#403a2c"/>
+    <circle cx="40" cy="96" r="30" fill="#403a2c"/>
+    <circle cx="40" cy="96" r="16" fill="#fdfaf0"/>
+    <circle cx="130" cy="96" r="30" fill="#d93a11"/>
+    <circle cx="130" cy="96" r="16" fill="#fdfaf0"/>
+    <circle cx="220" cy="96" r="30" fill="#403a2c"/>
+    <circle cx="220" cy="96" r="16" fill="#fdfaf0"/>
+    <!-- paper feeding through -->
+    <polygon points="0,78 300,78 300,84 0,84" fill="#fdfaf0"/>
+    <polygon points="-10,86 260,86 300,96 0,96" fill="none" stroke="#18140d" stroke-width="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- stacked magazines -->
+  <g transform="translate(420,86)">
+    <rect x="0" y="100" width="150" height="22" fill="#403a2c"/>
+    <rect x="6" y="100" width="138" height="8" fill="#d93a11"/>
+    <rect x="-6" y="76" width="162" height="24" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <rect x="-6" y="76" width="162" height="8" fill="#1b3aa3"/>
+    <rect x="-12" y="52" width="174" height="24" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <rect x="-12" y="52" width="174" height="8" fill="#d93a11"/>
+  </g>
+
+  <!-- open book -->
+  <g transform="translate(650,70)">
+    <path d="M0 30 Q55 6 110 30 L110 150 Q55 124 0 150 Z" fill="#fdfaf0" stroke="#18140d" stroke-width="2.5"/>
+    <path d="M184 30 Q129 6 74 30 L74 150 Q129 124 184 150 Z" fill="#fdfaf0" stroke="#18140d" stroke-width="2.5"/>
+    <line x1="74" y1="30" x2="74" y2="150" stroke="#18140d" stroke-width="2.5"/>
+    <g fill="#403a2c" opacity="0.5">
+      <rect x="16" y="48" width="50" height="5"/>
+      <rect x="16" y="60" width="42" height="5"/>
+      <rect x="16" y="80" width="50" height="5"/>
+      <rect x="16" y="92" width="36" height="5"/>
+    </g>
+    <g fill="#403a2c" opacity="0.5">
+      <rect x="90" y="48" width="50" height="5"/>
+      <rect x="90" y="60" width="42" height="5"/>
+      <rect x="90" y="80" width="50" height="5"/>
+      <rect x="90" y="92" width="36" height="5"/>
+    </g>
+    <g fill="#d93a11">
+      <rect x="16" y="110" width="34" height="5"/>
+      <rect x="90" y="110" width="34" height="5"/>
+    </g>
+  </g>
+
+  <g fill="#18140d" transform="translate(48,226)">
+    <rect width="3" height="34" opacity="0.9"/>
+    <rect x="7" width="5" height="34" opacity="0.85"/>
+    <rect x="16" width="2" height="34" opacity="0.7"/>
+    <rect x="22" width="5" height="34" opacity="0.9"/>
+    <rect x="31" width="3" height="34" opacity="0.75"/>
+    <rect x="38" width="6" height="34" opacity="0.9"/>
+    <rect x="48" width="2" height="34" opacity="0.7"/>
+    <rect x="54" width="4" height="34" opacity="0.85"/>
+    <rect x="62" width="5" height="34" opacity="0.9"/>
+    <rect x="71" width="3" height="34" opacity="0.75"/>
+    <rect x="78" width="2" height="34" opacity="0.7"/>
+    <rect x="84" width="6" height="34" opacity="0.9"/>
+    <rect x="94" width="3" height="34" opacity="0.8"/>
+  </g>
+  <text x="48" y="276" font-family="'Courier New', monospace" font-size="11" fill="#746b56" letter-spacing="2">EST · MMXXVI · SET FRESH EVERY MORNING</text>
+  <text x="976" y="276" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="14" fill="#403a2c">Printed on recycled electrons</text>
+</svg>

@@ -27,6 +27,10 @@ export default function AboutPage() {
       title="About Us"
       tagline="Twenty-six ways to set your documents free."
       updated="12 Sep 2026"
+      illustration={{
+        src: "/images/about-illustration.svg",
+        alt: "Editorial illustration — printing press rollers, stacked magazines, and an open book",
+      }}
     >
       <div>
         <h2 className="font-display text-xl font-bold text-ink mb-2">The Story</h2>

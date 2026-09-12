@@ -34,6 +34,10 @@ export default function ContactPage() {
       title="Contact Us"
       tagline="Pick a channel — every letter is read, most are printed."
       updated="12 Sep 2026"
+      illustration={{
+        src: "/images/contact-illustration.svg",
+        alt: "Editorial illustration — envelope with postmark, speech bubble, and paper plane",
+      }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {channels.map((c) => (

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="300" viewBox="0 0 1024 300">
+  <defs>
+    <pattern id="t-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#18140d" opacity="0.08"/>
+    </pattern>
+    <linearGradient id="t-paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdfaf0"/>
+      <stop offset="1" stop-color="#f3eddd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="300" fill="url(#t-paper)"/>
+  <rect width="1024" height="300" fill="url(#t-dots)"/>
+  <rect x="20" y="20" width="984" height="260" fill="#18140d"/>
+  <rect x="24" y="24" width="976" height="252" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+
+  <line x1="48" y1="64" x2="976" y2="64" stroke="#d93a11" stroke-width="3"/>
+  <text x="48" y="52" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="17" fill="#18140d">THE FINE PRINT</text>
+  <text x="976" y="54" text-anchor="end" font-family="'Courier New', monospace" font-size="13" fill="#746b56" letter-spacing="1">CLAUSE · 26</text>
+
+  <g transform="translate(60,96)">
+    <rect x="0" y="0" width="120" height="52" rx="6" fill="#403a2c"/>
+    <rect x="0" y="0" width="120" height="10" fill="#18140d"/>
+    <rect x="52" y="52" width="16" height="96" fill="#d93a11"/>
+    <rect x="52" y="52" width="16" height="12" fill="#a82c0c"/>
+    <rect x="14" y="148" width="168" height="20" fill="#18140d"/>
+    <rect x="14" y="148" width="168" height="6" fill="#403a2c"/>
+    <g stroke="#d93a11" stroke-width="3" stroke-linecap="round">
+      <line x1="138" y1="14" x2="158" y2="4"/>
+      <line x1="146" y1="30" x2="170" y2="26"/>
+      <line x1="138" y1="44" x2="160" y2="52"/>
+    </g>
+  </g>
+
+  <g transform="translate(340,80)">
+    <rect width="250" height="150" fill="#fdfaf0" stroke="#18140d" stroke-width="2.5"/>
+    <rect x="14" y="14" width="46" height="6" fill="#d93a11"/>
+    <rect x="14" y="28" width="120" height="6" fill="#18140d" opacity="0.35"/>
+    <rect x="14" y="42" width="120" height="6" fill="#18140d" opacity="0.25"/>
+    <rect x="14" y="60" width="180" height="2" fill="#18140d" opacity="0.2"/>
+    <rect x="14" y="70" width="160" height="6" fill="#18140d" opacity="0.25"/>
+    <rect x="14" y="84" width="170" height="6" fill="#18140d" opacity="0.25"/>
+    <rect x="14" y="98" width="150" height="6" fill="#18140d" opacity="0.25"/>
+    <rect x="14" y="116" width="180" height="2" fill="#18140d" opacity="0.2"/>
+    <line x1="14" y1="138" x2="110" y2="138" stroke="#18140d" stroke-width="2"/>
+    <path d="M20 134 Q32 128 40 133 T60 132 T80 135" fill="none" stroke="#1b3aa3" stroke-width="2.5"/>
+  </g>
+
+  <g transform="translate(700,72)">
+    <rect x="40" y="128" width="120" height="16" fill="#18140d"/>
+    <rect x="48" y="128" width="104" height="6" fill="#403a2c"/>
+    <rect x="94" y="54" width="12" height="76" fill="#403a2c"/>
+    <circle cx="100" cy="44" r="16" fill="#d93a11"/>
+    <rect x="8" y="54" width="184" height="8" fill="#403a2c"/>
+    <path d="M20 62 L48 118 L78 118 L104 62 Z" fill="#fdfaf0" stroke="#403a2c" stroke-width="3"/>
+    <rect x="40" y="118" width="44" height="8" fill="#403a2c"/>
+    <path d="M104 62 L130 118 L158 118 L184 62 Z" fill="#fdfaf0" stroke="#403a2c" stroke-width="3"/>
+    <rect x="124" y="118" width="42" height="8" fill="#403a2c"/>
+    <g stroke="#403a2c" stroke-width="2">
+      <line x1="32" y1="62" x2="96" y2="118"/>
+      <line x1="96" y1="62" x2="52" y2="118"/>
+      <line x1="112" y1="62" x2="148" y2="118"/>
+      <line x1="176" y1="62" x2="124" y2="118"/>
+    </g>
+  </g>
+
+  <g fill="#18140d" transform="translate(48,226)">
+    <rect width="3" height="34" opacity="0.9"/>
+    <rect x="7" width="5" height="34" opacity="0.85"/>
+    <rect x="16" width="2" height="34" opacity="0.7"/>
+    <rect x="22" width="5" height="34" opacity="0.9"/>
+    <rect x="31" width="3" height="34" opacity="0.75"/>
+    <rect x="38" width="6" height="34" opacity="0.9"/>
+    <rect x="48" width="2" height="34" opacity="0.7"/>
+    <rect x="54" width="4" height="34" opacity="0.85"/>
+    <rect x="62" width="5" height="34" opacity="0.9"/>
+    <rect x="71" width="3" height="34" opacity="0.75"/>
+    <rect x="78" width="2" height="34" opacity="0.7"/>
+    <rect x="84" width="6" height="34" opacity="0.9"/>
+    <rect x="94" width="3" height="34" opacity="0.8"/>
+  </g>
+  <text x="48" y="276" font-family="'Courier New', monospace" font-size="11" fill="#746b56" letter-spacing="2">SIGNED · SEALED · DELIVERED</text>
+  <text x="976" y="276" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="14" fill="#403a2c">Est. MMXXVI</text>
+</svg>

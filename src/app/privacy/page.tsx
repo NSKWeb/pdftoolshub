@@ -123,6 +123,10 @@ export default function PrivacyPage() {
       title="Privacy Policy"
       tagline="Your documents are your business — ours is the press work."
       updated="12 Sep 2026"
+      illustration={{
+        src: "/images/privacy-illustration.svg",
+        alt: "Editorial illustration — padlock, redacted document, security shield, and fingerprint",
+      }}
     >
       {sections.map((s) => (
         <div key={s.heading}>

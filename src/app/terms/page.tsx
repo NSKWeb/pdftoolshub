@@ -118,6 +118,10 @@ export default function TermsPage() {
       title="Terms of Service"
       tagline="The rules of the press room — short, sharp, and set in ink."
       updated="12 Sep 2026"
+      illustration={{
+        src: "/images/terms-illustration.svg",
+        alt: "Editorial illustration — gavel, contract sheet with signature, and scales of justice",
+      }}
     >
       {sections.map((s) => (
         <div key={s.heading}>

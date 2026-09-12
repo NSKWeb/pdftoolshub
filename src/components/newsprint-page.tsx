@@ -5,6 +5,7 @@ type NewsprintPageProps = {
   title: string;
   tagline?: string;
   updated?: string;
+  illustration?: { src: string; alt: string };
   children: React.ReactNode;
 };
 
@@ -13,6 +14,7 @@ export function NewsprintPage({
   title,
   tagline,
   updated,
+  illustration,
   children,
 }: NewsprintPageProps) {
   return (
@@ -32,6 +34,17 @@ export function NewsprintPage({
           </h1>
           {tagline && <p className="text-inksoft text-lg">{tagline}</p>}
         </div>
+
+        {illustration && (
+          <div className="mb-10">
+            <img
+              src={illustration.src}
+              alt={illustration.alt}
+              className="w-full border-2 border-ink shadow-offset-sm bg-paper"
+              loading="lazy"
+            />
+          </div>
+        )}
 
         <div className="neo-card rounded-sm p-6 sm:p-10 mb-10">
           <div className="space-y-6">{children}</div>

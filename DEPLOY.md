@@ -62,6 +62,25 @@ Set at minimum:
 | `NEXT_PUBLIC_SITE_URL` | `https://pdf.example.com` |
 | `JWT_SECRET` | `openssl rand -hex 32` output |
 | `DATABASE_URL` | `postgresql://pdftoolshub:<strong-password>@localhost:5432/pdftoolshub` (optional) |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | `G-XXXXXXXXXX` (optional — GA4 is opt-in) |
+
+> `NEXT_PUBLIC_SITE_URL` is inlined at build time and drives canonical tags,
+> `sitemap.xml`, `robots.txt`, and Open Graph URLs. Set it to the real domain
+> before `npm run build`; rebuild after changing it.
+
+---
+
+## 4b. SEO & search measurement
+
+After the site is live on its production domain:
+
+1. **Verify ownership** in [Google Search Console](https://search.google.com/search-console)
+   and [Bing Webmaster Tools](https://www.bing.com/webmasters) (DNS TXT record or an
+   HTML meta tag). Do not add verification files to the repo unless you want them public.
+2. **Submit the sitemap**: `https://<your-domain>/sitemap.xml`.
+3. **Analytics (optional)**: set `NEXT_PUBLIC_GA_MEASUREMENT_ID` to your GA4 ID and
+   rebuild. Analytics is off unless this is set — no tracking loads by default, and the
+   CSP only allows Google Analytics when it is enabled.
 
 ---
 

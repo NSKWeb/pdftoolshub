@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { Navigation } from "@/components/navigation";
 import { ErrorBoundary } from "@/components/error-boundary";
+import { Analytics } from "@/components/analytics";
 import { JsonLd, organizationSchema, websiteSchema } from "@/components/json-ld";
 import { OG_IMAGE, OG_IMAGE_ALT, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/seo";
 import "@fontsource-variable/fraunces";
@@ -141,6 +142,7 @@ export default function RootLayout({
             </div>
           </footer>
         </div>
+        <Analytics />
       </body>
     </html>
   );

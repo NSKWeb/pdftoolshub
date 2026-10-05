@@ -1,22 +1,56 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { Navigation } from "@/components/navigation";
 import { ErrorBoundary } from "@/components/error-boundary";
+import { Analytics } from "@/components/analytics";
+import { JsonLd, organizationSchema, websiteSchema } from "@/components/json-ld";
+import { OG_IMAGE, OG_IMAGE_ALT, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/seo";
 import "@fontsource-variable/fraunces";
 import "@fontsource-variable/archivo";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PDFToolsHub — The Magazine of PDF Utility",
-  description:
-    "Convert, compress, protect, and manage your PDFs with 26 powerful tools. Free for personal use, no sign-up required.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
   keywords:
     "PDF tools, PDF merge, PDF split, PDF compress, PDF converter, PDF editor, OCR",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "PDFToolsHub — The Magazine of PDF Utility",
-    description: "Convert, compress, protect, and manage your PDFs with 26 powerful tools.",
-    type: "website"
-  }
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    siteName: SITE_NAME,
+    type: "website",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: OG_IMAGE_ALT }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#18140d",
 };
 
 export default function RootLayout({
@@ -27,6 +61,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-body">
       <body className="grain">
+        <JsonLd id="website-jsonld" data={websiteSchema()} />
+        <JsonLd id="organization-jsonld" data={organizationSchema()} />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:bg-cream focus:text-ink focus:px-4 focus:py-2 focus:border-2 focus:border-ink"
+        >
+          Skip to content
+        </a>
         <div className="min-h-screen flex flex-col">
           {/* Masthead — the editorial newspaper header */}
           <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b-4 border-ink px-4 sm:px-6">
@@ -45,7 +87,7 @@ export default function RootLayout({
             </div>
             <div className="barcode max-w-7xl mx-auto" aria-hidden="true" />
           </header>
-          <main className="flex-1">
+          <main id="main-content" className="flex-1">
             <ErrorBoundary>{children}</ErrorBoundary>
           </main>
           {/* Colophon — magazine back-matter */}
@@ -100,6 +142,7 @@ export default function RootLayout({
             </div>
           </footer>
         </div>
+        <Analytics />
       </body>
     </html>
   );

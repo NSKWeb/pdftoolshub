@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import { AuthForm } from "@/components/auth-form";
+
+export const metadata: Metadata = {
+  title: "Create Account",
+  description: "Create a free PDFToolsHub account to manage your documents and unlock Pro features.",
+  alternates: { canonical: "/auth/register" },
+  robots: { index: false, follow: false },
+};
 
 export default function RegisterPage() {
   return (

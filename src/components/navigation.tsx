@@ -48,7 +48,7 @@ export function Navigation() {
   }
 
   return (
-    <nav className="flex items-center gap-4 lg:gap-6 text-sm">
+    <nav aria-label="Primary" className="flex items-center gap-4 lg:gap-6 text-sm">
       <Link className="hidden sm:block font-medium hover:text-vermilion transition" href="/">
         Tools
       </Link>
@@ -110,15 +110,18 @@ export function Navigation() {
 
       <button
         className="lg:hidden p-2"
+        aria-label="Toggle navigation menu"
+        aria-expanded={mobileMenuOpen}
+        aria-controls="mobile-menu"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
 
       {mobileMenuOpen && (
-        <div className="fixed top-[73px] left-0 right-0 bg-cream border-b-4 border-ink p-4 z-50 space-y-2 lg:hidden shadow-offset">
+        <div id="mobile-menu" className="fixed top-[73px] left-0 right-0 bg-cream border-b-4 border-ink p-4 z-50 space-y-2 lg:hidden shadow-offset">
           <Link className="block py-2 font-display font-bold hover:text-vermilion transition" href="/">
             Tools
           </Link>

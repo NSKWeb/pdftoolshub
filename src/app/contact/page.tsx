@@ -1,10 +1,13 @@
+import Link from "next/link";
 import { NewsprintPage } from "@/components/newsprint-page";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Contact Us — PDFToolsHub",
+export const metadata = pageMetadata({
+  title: "Contact Us",
   description:
     "Reach the crew behind PDFToolsHub — bug reports, feature requests, or press inquiries.",
-};
+  path: "/contact",
+});
 
 const channels = [
   {
@@ -94,9 +97,9 @@ export default function ContactPage() {
             <p className="text-sm text-inksoft leading-relaxed">
               26 in total — everything from merge, split, compress, and rotate to OCR,
               watermarks, redaction, and conversions. Browse them all on the{" "}
-              <a href="/" className="underline underline-offset-2 text-cobalt hover:text-vermilion transition">
+              <Link href="/" className="underline underline-offset-2 text-cobalt hover:text-vermilion transition">
                 landing page
-              </a>
+              </Link>
               .
             </p>
           </div>

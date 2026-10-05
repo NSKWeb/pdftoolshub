@@ -1,10 +1,12 @@
 import { NewsprintPage } from "@/components/newsprint-page";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Terms of Service — PDFToolsHub",
+export const metadata = pageMetadata({
+  title: "Terms of Service",
   description:
     "The terms that govern your use of PDFToolsHub, the self-hosted magazine of PDF utility.",
-};
+  path: "/terms",
+});
 
 const sections = [
   {
@@ -12,14 +14,14 @@ const sections = [
     body: (
       <>
         <p>
-          By accessing or using <strong>PDFToolsHub</strong> (the "Service"), you agree to be
+          By accessing or using <strong>PDFToolsHub</strong> (the &ldquo;Service&rdquo;), you agree to be
           bound by these Terms of Service. If you do not agree with any part of these terms,
           you may not access or use the Service.
         </p>
         <p>
           This is a self-hostable application. Operators who deploy it on their own servers
           are responsible for their own deployment, data handling, and compliance with local
-          law. Where this instance is hosted by a third party, that host's terms may also
+          law. Where this instance is hosted by a third party, that host&apos;s terms may also
           apply.
         </p>
       </>
@@ -32,7 +34,7 @@ const sections = [
         The Service provides twenty-six tools for working with PDF documents — merging,
         splitting, converting, compressing, OCR, and related utilities. Tools accept the
         files you upload, process them on the server, and return a processed file for
-        download. The Service is provided "as is" and "as available".
+        download. The Service is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo;.
       </p>
     ),
   },

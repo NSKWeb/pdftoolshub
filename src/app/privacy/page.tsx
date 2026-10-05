@@ -1,10 +1,12 @@
 import { NewsprintPage } from "@/components/newsprint-page";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Privacy Policy — PDFToolsHub",
+export const metadata = pageMetadata({
+  title: "Privacy Policy",
   description:
     "How PDFToolsHub handles your files, account data, and cookies.",
-};
+  path: "/privacy",
+});
 
 const sections = [
   {
@@ -109,7 +111,7 @@ const sections = [
     body: (
       <p>
         We may update this policy as the Service evolves. Significant changes will be noted
-        on the page with a new "Updated" date. Continued use of the Service after changes
+        on the page with a new &ldquo;Updated&rdquo; date. Continued use of the Service after changes
         take effect constitutes acceptance of the revised policy.
       </p>
     ),

@@ -25,6 +25,7 @@
 - [🎨 The Type](#-the-type)
 - [🗂 The Press — 26 Tools](#-the-press--26-tools)
 - [⚙️ The Machinery — Tech Stack](#️-the-machinery--tech-stack)
+- [🔍 Search Visibility & SEO](#-search-visibility--seo)
 - [🚀 The First Edition — Quick Start](#-the-first-edition--quick-start)
 - [🔌 The Edition Control — API](#-the-edition-control--api)
 - [📋 The Fine Print — Configuration](#-the-fine-print--configuration)
@@ -199,6 +200,51 @@ Ghostscript or GraphicsMagick required — which keeps the app **directly deploy
 
 ---
 
+## 🔍 Search Visibility & SEO
+
+This project implements the reusable **[SEO_PROMPT toolkit](https://github.com/NSKWeb/SEO_PROMPT)** —
+a stack-agnostic prompt plus an OpenHands `seo-audit` skill for making any web-facing repo
+crawlable, indexable, and well-ranked. Everything below is verified against the built output.
+
+<p align="center">
+  <img src="public/infographics/seo.svg" alt="pdftoolshub SEO layer: technical foundation, on-page SEO, content and trust, and opt-in measurement" width="1240" />
+</p>
+
+**Technical foundation**
+
+- 🗺️ Dynamic **`sitemap.xml`** (`src/app/sitemap.ts`) — every one of the 26 `/tools/[tool]` routes plus the static pages, with canonical URLs generated from the tool registry
+- 🤖 **`robots.txt`** (`src/app/robots.ts`) — allows all crawlers and points at the sitemap (the static `public/robots.txt` was removed so there is a single source of truth)
+- 🔗 **Canonical tags** on every route, driven by `NEXT_PUBLIC_SITE_URL`
+- 🛡️ **Security headers** in `next.config.mjs` + `src/middleware.ts` — HSTS, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, and a CSP
+- 📱 Mobile-first responsive layout with a viewport meta tag and reserved media space (CLS-safe)
+
+**On-page SEO**
+
+- 📄 Unique title + meta description per page via `pageMetadata()` (`src/lib/seo.ts`)
+- 1️⃣ Exactly one `<h1>` per page, a logical heading hierarchy, and semantic landmarks
+- 📣 **Open Graph + Twitter cards** with a generated `og-image.png` (1200×630)
+- 🧩 **JSON-LD structured data** (`src/components/json-ld.tsx`) — `Organization`, `WebSite`, `SoftwareApplication` + `Offer`, and `BreadcrumbList`
+- 🖼️ Descriptive `alt` text on every illustration; SVGs rendered through `next/image` with explicit dimensions
+
+**Content & E-E-A-T**
+
+- 📖 An About page with the project story, plus `/contact`, `/privacy`, and `/terms`
+- 🔗 Internal links between related tools with descriptive anchor text
+
+**Measurement (opt-in, off by default)**
+
+- 📈 **GA4** wiring in `src/lib/analytics.ts` + `src/components/analytics.tsx` — loads only when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is set, and the CSP allows Google origins only then
+- 🔎 Google Search Console / Bing verification and sitemap submission steps live in [`DEPLOY.md`](./DEPLOY.md)
+
+**Reuse it in another repo**
+
+```bash
+cp -r .agents/skills/seo-audit <target-repo>/.agents/skills/
+# then: "Run the seo-audit skill on this repo."
+```
+
+---
+
 ## 🚀 The First Edition — Quick Start
 
 ### Prerequisites
@@ -369,9 +415,10 @@ pdf-tools-hub/
 **Verification status (this rebuild):**
 
 - ✅ `tsc --noEmit` — clean
-- ✅ `npm test` — 9 / 9 passing
-- ✅ `npm run build` — success
+- ✅ `npm test` — 14 / 14 passing
+- ✅ `npm run build` — 47 / 47 pages
 - ✅ Live smoke test — 26 / 26 tools return `HTTP 200` with valid output
+- ✅ SEO — `robots.txt`, `sitemap.xml`, head meta, JSON-LD, and security headers verified on the built output
 - ✅ GitHub Actions — Typecheck · Test · Build green on every push
 
 ---

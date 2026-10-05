@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 620" width="1240" height="620" role="img" aria-labelledby="t d">
+  <title id="t">pdftoolshub SEO and search-visibility layer</title>
+  <desc id="d">A diagram of the SEO layer: a technical foundation (robots, sitemap, canonicals, security headers), an on-page layer (titles, meta, Open Graph, JSON-LD, image alt), a content and trust layer, and an opt-in measurement layer.</desc>
+  <rect width="1240" height="620" fill="#f3eddd"/>
+  <rect x="0" y="0" width="1240" height="10" fill="#18140d"/>
+  <text x="48" y="74" font-family="'SFMono-Regular', Consolas, monospace" font-size="15" letter-spacing="4" fill="#c8402a" font-weight="700">SEO_PROMPT · IMPLEMENTED</text>
+  <text x="46" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" fill="#18140d">The Search-Visibility Layer</text>
+  <text x="48" y="160" font-family="'Helvetica Neue', Arial, sans-serif" font-size="17" fill="#6f6653">Crawlable, indexable, and rank-ready — 26 tool pages, all statically generated.</text>
+  <line x1="48" y1="184" x2="1192" y2="184" stroke="#18140d" stroke-width="2"/>
+  <rect x="54.0" y="222" width="274.0" height="340" fill="#18140d"/>
+  <rect x="48.0" y="216" width="274.0" height="340" fill="#fdfaf0" stroke="#18140d" stroke-width="2.5"/>
+  <rect x="48.0" y="216" width="274.0" height="52" fill="#274a86"/>
+  <text x="185.0" y="249" text-anchor="middle" font-family="'SFMono-Regular', Consolas, monospace" font-size="14" letter-spacing="1" fill="#fdfaf0" font-weight="700">01 · TECHNICAL</text>
+  <rect x="66.0" y="285" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 70.0 294 l 5 6 l 9 -12" fill="none" stroke="#274a86" stroke-width="3" stroke-linecap="round"/>
+  <text x="94.0" y="300" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">robots.ts → allows</text>
+  <text x="94.0" y="317" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">all + sitemap</text>
+  <rect x="66.0" y="341" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 70.0 350 l 5 6 l 9 -12" fill="none" stroke="#274a86" stroke-width="3" stroke-linecap="round"/>
+  <text x="94.0" y="356" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">sitemap.ts → 26 tool</text>
+  <text x="94.0" y="373" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">routes + pages</text>
+  <rect x="66.0" y="397" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 70.0 406 l 5 6 l 9 -12" fill="none" stroke="#274a86" stroke-width="3" stroke-linecap="round"/>
+  <text x="94.0" y="412" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">canonical tags</text>
+  <text x="94.0" y="429" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">(NEXT_PUBLIC_SITE_URL)</text>
+  <rect x="66.0" y="453" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 70.0 462 l 5 6 l 9 -12" fill="none" stroke="#274a86" stroke-width="3" stroke-linecap="round"/>
+  <text x="94.0" y="468" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">security headers +</text>
+  <text x="94.0" y="485" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">CSP + HSTS</text>
+  <rect x="344.0" y="222" width="274.0" height="340" fill="#18140d"/>
+  <rect x="338.0" y="216" width="274.0" height="340" fill="#fdfaf0" stroke="#18140d" stroke-width="2.5"/>
+  <rect x="338.0" y="216" width="274.0" height="52" fill="#c8402a"/>
+  <text x="475.0" y="249" text-anchor="middle" font-family="'SFMono-Regular', Consolas, monospace" font-size="14" letter-spacing="1" fill="#fdfaf0" font-weight="700">02 · ON-PAGE</text>
+  <rect x="356.0" y="285" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 360.0 294 l 5 6 l 9 -12" fill="none" stroke="#c8402a" stroke-width="3" stroke-linecap="round"/>
+  <text x="384.0" y="300" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">unique title + meta</text>
+  <text x="384.0" y="317" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">per page</text>
+  <rect x="356.0" y="341" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 360.0 350 l 5 6 l 9 -12" fill="none" stroke="#c8402a" stroke-width="3" stroke-linecap="round"/>
+  <text x="384.0" y="356" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">one H1, logical</text>
+  <text x="384.0" y="373" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">heading order</text>
+  <rect x="356.0" y="397" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 360.0 406 l 5 6 l 9 -12" fill="none" stroke="#c8402a" stroke-width="3" stroke-linecap="round"/>
+  <text x="384.0" y="412" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">Open Graph + Twitter</text>
+  <text x="384.0" y="429" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">+ og-image</text>
+  <rect x="356.0" y="453" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 360.0 462 l 5 6 l 9 -12" fill="none" stroke="#c8402a" stroke-width="3" stroke-linecap="round"/>
+  <text x="384.0" y="468" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">JSON-LD: Org ·</text>
+  <text x="384.0" y="485" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">WebSite · App ·</text>
+  <text x="384.0" y="502" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">Breadcrumb</text>
+  <rect x="634.0" y="222" width="274.0" height="340" fill="#18140d"/>
+  <rect x="628.0" y="216" width="274.0" height="340" fill="#fdfaf0" stroke="#18140d" stroke-width="2.5"/>
+  <rect x="628.0" y="216" width="274.0" height="52" fill="#5c6a34"/>
+  <text x="765.0" y="249" text-anchor="middle" font-family="'SFMono-Regular', Consolas, monospace" font-size="14" letter-spacing="1" fill="#fdfaf0" font-weight="700">03 · CONTENT &amp; TRUST</text>
+  <rect x="646.0" y="285" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 650.0 294 l 5 6 l 9 -12" fill="none" stroke="#5c6a34" stroke-width="3" stroke-linecap="round"/>
+  <text x="674.0" y="300" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">About · Contact ·</text>
+  <text x="674.0" y="317" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">Privacy · Terms</text>
+  <rect x="646.0" y="341" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 650.0 350 l 5 6 l 9 -12" fill="none" stroke="#5c6a34" stroke-width="3" stroke-linecap="round"/>
+  <text x="674.0" y="356" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">internal links</text>
+  <text x="674.0" y="373" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">between related</text>
+  <text x="674.0" y="390" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">tools</text>
+  <rect x="646.0" y="397" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 650.0 406 l 5 6 l 9 -12" fill="none" stroke="#5c6a34" stroke-width="3" stroke-linecap="round"/>
+  <text x="674.0" y="412" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">descriptive alt on</text>
+  <text x="674.0" y="429" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">every illustration</text>
+  <rect x="646.0" y="453" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 650.0 462 l 5 6 l 9 -12" fill="none" stroke="#5c6a34" stroke-width="3" stroke-linecap="round"/>
+  <text x="674.0" y="468" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">SVGs via next/image</text>
+  <text x="674.0" y="485" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">with dimensions</text>
+  <rect x="924.0" y="222" width="274.0" height="340" fill="#18140d"/>
+  <rect x="918.0" y="216" width="274.0" height="340" fill="#fdfaf0" stroke="#18140d" stroke-width="2.5"/>
+  <rect x="918.0" y="216" width="274.0" height="52" fill="#18140d"/>
+  <text x="1055.0" y="249" text-anchor="middle" font-family="'SFMono-Regular', Consolas, monospace" font-size="14" letter-spacing="1" fill="#fdfaf0" font-weight="700">04 · MEASUREMENT</text>
+  <rect x="936.0" y="285" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 940.0 294 l 5 6 l 9 -12" fill="none" stroke="#18140d" stroke-width="3" stroke-linecap="round"/>
+  <text x="964.0" y="300" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">GA4 — opt-in, off by</text>
+  <text x="964.0" y="317" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">default</text>
+  <rect x="936.0" y="341" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 940.0 350 l 5 6 l 9 -12" fill="none" stroke="#18140d" stroke-width="3" stroke-linecap="round"/>
+  <text x="964.0" y="356" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">CSP allows Google</text>
+  <text x="964.0" y="373" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">only when enabled</text>
+  <rect x="936.0" y="397" width="18" height="18" fill="none" stroke="#18140d" stroke-width="2"/>
+  <path d="M 940.0 406 l 5 6 l 9 -12" fill="none" stroke="#18140d" stroke-width="3" stroke-linecap="round"/>
+  <text x="964.0" y="412" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">Search Console +</text>
+  <text x="964.0" y="429" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">Bing steps in</text>
+  <text x="964.0" y="446" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13.5" fill="#18140d">DEPLOY.md</text>
+  <text x="620.0" y="592" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#6f6653">Implements the reusable <tspan font-family="'SFMono-Regular', Consolas, monospace" fill="#18140d">SEO_PROMPT</tspan> toolkit — audit, implement, verify, ship one PR.</text>
+</svg>

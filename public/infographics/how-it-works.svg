@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1620" viewBox="0 0 1000 1620" role="img" aria-label="How PDFToolsHub works, step by step">
+  <defs>
+  <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.3" fill="#18140d" opacity="0.09"/>
+  </pattern>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fdfaf0"/><stop offset="1" stop-color="#f3eddd"/>
+  </linearGradient>
+  <marker id="tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#18140d"/>
+  </marker>
+  
+</defs>
+  <rect width="1000" height="1620" fill="url(#paper)"/>
+  <rect width="1000" height="1620" fill="url(#dots)"/>
+  <rect x="20" y="20" width="960" height="1580" fill="#18140d"/>
+  <rect x="24" y="24" width="952" height="1572" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+
+  <line x1="60" y1="104" x2="940" y2="104" stroke="#d93a11" stroke-width="4"/>
+  <text x="60" y="72" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="34" fill="#18140d">How the press works</text>
+  <text x="60" y="96" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#403a2c">From upload to download in three moves — everything runs on one self-hosted press.</text>
+  <text x="940" y="66" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#746b56" letter-spacing="1">FIG. 01 · THE PIPELINE</text>
+
+  
+  <g transform="translate(60,140)">
+    <rect x="8" y="8" width="880" height="210" fill="#18140d"/>
+    <rect width="880" height="210" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <rect width="880" height="10" fill="#d93a11"/>
+    <circle cx="58" cy="66" r="28" fill="#d93a11"/>
+    <text x="58" y="78" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" fill="#fdfaf0">1</text>
+    <text x="104" y="62" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" fill="#18140d">Upload</text>
+    <text x="104" y="92" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#746b56">Drop files into the press.</text>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#403a2c">
+      <text x="30" y="150">• Drag &amp; drop, or pick from disk.</text><text x="30" y="180">• PDFs, images, and office docs accepted.</text><text x="30" y="210">• Max 25 MB per file.</text>
+    </g>
+  </g>
+  <line x1="500" y1="362" x2="500" y2="404" stroke="#18140d" stroke-width="4" marker-end="url(#tip)"/>
+  
+  <g transform="translate(60,412)">
+    <rect x="8" y="8" width="880" height="210" fill="#18140d"/>
+    <rect width="880" height="210" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <rect width="880" height="10" fill="#1b3aa3"/>
+    <circle cx="58" cy="66" r="28" fill="#1b3aa3"/>
+    <text x="58" y="78" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" fill="#fdfaf0">2</text>
+    <text x="104" y="62" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" fill="#18140d">Process</text>
+    <text x="104" y="92" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#746b56">Your chosen tool does the work.</text>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#403a2c">
+      <text x="30" y="150">• 26 in-process engines — no external SaaS.</text><text x="30" y="180">• Runs server-side, on your own hardware.</text><text x="30" y="210">• No queue, no waiting on a third party.</text>
+    </g>
+  </g>
+  <line x1="500" y1="634" x2="500" y2="676" stroke="#18140d" stroke-width="4" marker-end="url(#tip)"/>
+  
+  <g transform="translate(60,684)">
+    <rect x="8" y="8" width="880" height="210" fill="#18140d"/>
+    <rect width="880" height="210" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <rect width="880" height="10" fill="#5c6b2a"/>
+    <circle cx="58" cy="66" r="28" fill="#5c6b2a"/>
+    <text x="58" y="78" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" fill="#fdfaf0">3</text>
+    <text x="104" y="62" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" fill="#18140d">Download</text>
+    <text x="104" y="92" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#746b56">The finished file comes straight back.</text>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#403a2c">
+      <text x="30" y="150">• Grab it from the download link.</text><text x="30" y="180">• Stored locally, or on S3 / Cloudinary.</text><text x="30" y="210">• Automatically deleted after 1 hour.</text>
+    </g>
+  </g>
+
+  <g transform="translate(60,948)">
+    <rect x="8" y="8" width="880" height="250" fill="#18140d"/>
+    <rect width="880" height="250" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <text x="34" y="52" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="26" fill="#18140d">Under the hood</text>
+    <g font-family="'Courier New', monospace" font-size="15" fill="#403a2c">
+      <text x="34" y="96">pdf-lib</text><text x="34" y="126">pdfjs-dist</text><text x="34" y="156">tesseract.js</text><text x="34" y="186">@napi-rs/canvas</text>
+    </g>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#403a2c">
+      <text x="240" y="96">— page surgery: merge, split, rotate, stamp</text>
+      <text x="240" y="126">— render &amp; text extraction for conversion</text>
+      <text x="240" y="156">— OCR for scanned documents</text>
+      <text x="240" y="186">— raster &amp; image export</text>
+    </g>
+  </g>
+
+  <g transform="translate(60,1230)">
+    <rect x="8" y="8" width="880" height="150" fill="#18140d"/>
+    <rect width="880" height="150" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <text x="34" y="52" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="26" fill="#18140d">House rules</text>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#403a2c">
+      <text x="34" y="90">• Max 25 MB per file</text><text x="34" y="120">• Local file processing</text>
+      <text x="340" y="90">• 1-hour file retention</text><text x="340" y="120">• No account required</text>
+      <text x="646" y="90">• No sign-up wall</text><text x="646" y="120">• Free forever</text>
+    </g>
+  </g>
+
+  <g transform="translate(60,1420)" fill="#18140d">
+    <rect x="0" width="4" height="30" opacity="0.85"/><rect x="10" width="2" height="30" opacity="0.85"/><rect x="20" width="2" height="30" opacity="0.85"/><rect x="30" width="4" height="30" opacity="0.85"/><rect x="40" width="2" height="30" opacity="0.85"/><rect x="50" width="2" height="30" opacity="0.85"/><rect x="60" width="4" height="30" opacity="0.85"/><rect x="70" width="2" height="30" opacity="0.85"/><rect x="80" width="2" height="30" opacity="0.85"/><rect x="90" width="4" height="30" opacity="0.85"/><rect x="100" width="2" height="30" opacity="0.85"/><rect x="110" width="2" height="30" opacity="0.85"/><rect x="120" width="4" height="30" opacity="0.85"/><rect x="130" width="2" height="30" opacity="0.85"/><rect x="140" width="2" height="30" opacity="0.85"/><rect x="150" width="4" height="30" opacity="0.85"/><rect x="160" width="2" height="30" opacity="0.85"/><rect x="170" width="2" height="30" opacity="0.85"/><rect x="180" width="4" height="30" opacity="0.85"/><rect x="190" width="2" height="30" opacity="0.85"/><rect x="200" width="2" height="30" opacity="0.85"/><rect x="210" width="4" height="30" opacity="0.85"/><rect x="220" width="2" height="30" opacity="0.85"/><rect x="230" width="2" height="30" opacity="0.85"/><rect x="240" width="4" height="30" opacity="0.85"/><rect x="250" width="2" height="30" opacity="0.85"/><rect x="260" width="2" height="30" opacity="0.85"/><rect x="270" width="4" height="30" opacity="0.85"/><rect x="280" width="2" height="30" opacity="0.85"/><rect x="290" width="2" height="30" opacity="0.85"/>
+  </g>
+  <text x="940" y="1450" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="16" fill="#403a2c">Set fresh every morning · PDFToolsHub</text>
+  <text x="60" y="1520" font-family="'Courier New', monospace" font-size="13" fill="#746b56" letter-spacing="2">EST · MMXXVI · PRINTED OFF-LINE</text>
+</svg>

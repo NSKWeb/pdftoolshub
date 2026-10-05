@@ -71,7 +71,7 @@ TypeScript compiles clean, the Jest suite passes, and the production build succe
 
 ### How it works
 
-<img src="public/screenshots/pipeline.svg" alt="Upload → Process → Download pipeline" width="880">
+<img src="public/workflow.svg" alt="Upload → Process → Download workflow" width="880">
 
 Three steps, no hidden pipeline. Files go in as `multipart/form-data`, each of the 26 editors
 runs in-process (no Ghostscript, no GraphicsMagick, no external binaries), and the finished
@@ -80,6 +80,14 @@ file comes straight back.
 - **1 · Upload** — one or many files (`multipart/form-data`)
 - **2 · Process** — `pdf-lib`, `pdfjs-dist`, `tesseract.js`, `@napi-rs/canvas` run in-process
 - **3 · Download** — stored locally, or persisted to S3 / Cloudinary
+
+<p align="center">
+  <img src="public/infographics/how-it-works.svg" alt="How PDFToolsHub works — a step-by-step infographic" width="620">
+</p>
+
+<p align="center">
+  <img src="public/infographics/security.svg" alt="Security model — your files stay on your press and are deleted after one hour" width="560">
+</p>
 
 ---
 
@@ -104,6 +112,13 @@ file comes straight back.
 ## 🗂 The Press — 26 Tools
 
 <img src="public/screenshots/categories.svg" alt="Six departments of the press" width="880">
+
+<p align="center"><em>Each tool ships with its own editorial illustration, drawn on the same ink-on-paper grid.</em></p>
+
+| | | |
+|---|---|---|
+| <img src="public/tools/merge.svg" alt="Merge PDFs illustration" width="280"> | <img src="public/tools/compress.svg" alt="Compress PDF illustration" width="280"> | <img src="public/tools/ocr.svg" alt="OCR PDF illustration" width="280"> |
+| <img src="public/tools/redact.svg" alt="Redact PDF illustration" width="280"> | <img src="public/tools/watermark-text.svg" alt="Text Watermark illustration" width="280"> | <img src="public/tools/booklet.svg" alt="Booklet illustration" width="280"> |
 
 ### Binding & Structure
 
@@ -324,12 +339,15 @@ pdf-tools-hub/
 │   │   ├── session.ts       # JWT cookies (bcrypt)
 │   │   ├── storage.ts       # S3 / Cloudinary / local
 │   │   ├── api-keys.ts      # public API keys
-│   │   └── tools.ts         # tool registry (slug, name, description)
+│   │   └── tools.ts         # tool registry (slug, name, category, accent, use cases)
 │   ├── middleware.ts        # route protection + security headers
 │   └── types/               # shared types
 ├── prisma/                  # schema (accounts, files)
 ├── public/
-│   ├── screenshots/         # README visuals (hero, pipeline, categories)
+│   ├── screenshots/         # README visuals (hero, categories, app snapshots)
+│   ├── infographics/        # how-it-works + security diagrams
+│   ├── tools/               # one SVG illustration per tool (26 files)
+│   ├── workflow.svg         # upload → process → download strip
 │   └── manifest.json · robots.txt
 └── .env.example             # environment template
 ```

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { tools } from "@/lib/tools";
+import { type Tool } from "@/lib/tools";
 
 /**
  * Canonical site origin. Set NEXT_PUBLIC_SITE_URL to the production domain
@@ -70,7 +70,7 @@ export function pageMetadata({
   };
 }
 
-export function toolDescription(tool: (typeof tools)[number]): string {
+export function toolDescription(tool: Tool): string {
   const base = tool.description.replace(/\.$/, "");
   return `${base}. Free online ${tool.name} — no sign-up, files processed securely and deleted after 1 hour.`;
 }

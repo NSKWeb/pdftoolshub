@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" role="img" aria-label="Security model: your files stay on the press and are deleted after one hour">
+  <defs>
+  <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.3" fill="#18140d" opacity="0.09"/>
+  </pattern>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fdfaf0"/><stop offset="1" stop-color="#f3eddd"/>
+  </linearGradient>
+  <marker id="tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#18140d"/>
+  </marker>
+  
+</defs>
+  <rect width="800" height="420" fill="url(#paper)"/>
+  <rect width="800" height="420" fill="url(#dots)"/>
+  <rect x="16" y="16" width="768" height="388" fill="#18140d"/>
+  <rect x="20" y="20" width="760" height="380" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+  <line x1="44" y1="66" x2="756" y2="66" stroke="#d93a11" stroke-width="3"/>
+  <text x="44" y="52" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="18" fill="#18140d">THE VAULT</text>
+  <text x="756" y="54" text-anchor="end" font-family="'Courier New', monospace" font-size="13" fill="#746b56" letter-spacing="1">YOUR PRESS · YOUR FILES</text>
+
+  <g transform="translate(60,110)">
+    <rect x="6" y="6" width="200" height="230" fill="#18140d"/>
+    <rect width="200" height="230" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <rect x="24" y="30" width="150" height="170" fill="#f3eddd" stroke="#18140d" stroke-width="2"/>
+    <rect x="40" y="52" width="118" height="4" fill="#403a2c" opacity="0.5"/><rect x="40" y="68" width="118" height="4" fill="#403a2c" opacity="0.5"/><rect x="40" y="84" width="70.8" height="4" fill="#403a2c" opacity="0.5"/><rect x="40" y="100" width="118" height="4" fill="#403a2c" opacity="0.5"/><rect x="40" y="116" width="118" height="4" fill="#403a2c" opacity="0.5"/><rect x="40" y="132" width="70.8" height="4" fill="#403a2c" opacity="0.5"/><rect x="40" y="148" width="118" height="4" fill="#403a2c" opacity="0.5"/>
+    <text x="100" y="218" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#403a2c">your-document.pdf</text>
+  </g>
+
+  <line x1="290" y1="220" x2="350" y2="220" stroke="#18140d" stroke-width="4" marker-end="url(#tip)"/>
+
+  <g transform="translate(366,110)">
+    <rect x="6" y="6" width="200" height="230" fill="#18140d"/>
+    <rect width="200" height="230" fill="#1b3aa3"/>
+    <path d="M100 40 L150 60 V120 Q150 170 100 196 Q50 170 50 120 V60 Z" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <path d="M78 118 L94 136 L126 100" fill="none" stroke="#1b3aa3" stroke-width="6"/>
+    <text x="100" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="15" fill="#fdfaf0">PROCESSED HERE</text>
+  </g>
+
+  <line x1="596" y1="220" x2="656" y2="220" stroke="#18140d" stroke-width="4" marker-end="url(#tip)"/>
+
+  <g transform="translate(672,110)">
+    <rect x="6" y="6" width="72" height="230" fill="#18140d"/>
+    <rect width="72" height="230" fill="#fdfaf0" stroke="#18140d" stroke-width="2"/>
+    <circle cx="36" cy="70" r="22" fill="none" stroke="#d93a11" stroke-width="4"/>
+    <line x1="36" y1="92" x2="36" y2="150" stroke="#d93a11" stroke-width="4"/>
+    <text x="36" y="196" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="13" fill="#18140d">1 HR</text>
+  </g>
+
+  <text x="44" y="378" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#403a2c">Files never leave your server · no third-party processing · deleted after 1 hour</text>
+</svg>

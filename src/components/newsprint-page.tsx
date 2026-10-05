@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type NewsprintPageProps = {
@@ -36,14 +37,16 @@ export function NewsprintPage({
         </div>
 
         {illustration && (
-          <div className="mb-10">
-            <img
+          <figure className="mb-10">
+            <Image
               src={illustration.src}
               alt={illustration.alt}
-              className="w-full border-2 border-ink shadow-offset-sm bg-paper"
-              loading="lazy"
+              width={1024}
+              height={300}
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="w-full h-auto border-2 border-ink shadow-offset-sm bg-paper"
             />
-          </div>
+          </figure>
         )}
 
         <div className="neo-card rounded-sm p-6 sm:p-10 mb-10">

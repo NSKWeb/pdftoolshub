@@ -1,6 +1,28 @@
+import type { Metadata } from "next";
 import { ToolUploadForm } from "@/components/tool-upload-form";
+import { JsonLd, breadcrumbSchema, softwareApplicationSchema } from "@/components/json-ld";
 import { tools } from "@/lib/tools";
+import { pageMetadata, toolDescription } from "@/lib/seo";
 import Link from "next/link";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ tool: string }>;
+}): Promise<Metadata> {
+  const { tool: toolSlug } = await params;
+  const tool = tools.find((item) => item.slug === toolSlug);
+
+  if (!tool) {
+    return { title: "Tool not found", robots: { index: false, follow: false } };
+  }
+
+  return pageMetadata({
+    title: `${tool.name} — Free Online PDF Tool`,
+    description: toolDescription(tool),
+    path: `/tools/${tool.slug}`,
+  });
+}
 
 export default async function ToolPage({ params }: { params: Promise<{ tool: string }> }) {
   const { tool: toolSlug } = await params;
@@ -26,17 +48,29 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
 
   return (
     <section className="px-4 sm:px-6 py-8 max-w-5xl mx-auto">
+      <JsonLd id="software-application-jsonld" data={softwareApplicationSchema(tool)} />
+      <JsonLd
+        id="breadcrumb-jsonld"
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: tool.name, path: `/tools/${tool.slug}` },
+        ])}
+      />
       <div className="space-y-6">
         <div>
-          <Link
-            href="/"
-            className="text-sm text-phantom hover:text-vermilion transition inline-flex items-center gap-1 font-medium"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to all tools
-          </Link>
+          <nav aria-label="Breadcrumb" className="text-sm text-phantom">
+            <ol className="flex flex-wrap items-center gap-1">
+              <li>
+                <Link href="/" className="hover:text-vermilion transition font-medium">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page" className="text-ink font-medium">
+                {tool.name}
+              </li>
+            </ol>
+          </nav>
           <div className="dept-tag mt-4">Tool № {String(tools.findIndex((t) => t.slug === tool.slug) + 1).padStart(2, "0")}</div>
           <h1 className="font-display text-4xl sm:text-5xl font-black tracking-tight mt-2">
             {tool.name}
@@ -79,7 +113,17 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
             </div>
             <div className="neo-card rounded-sm p-5 text-sm text-inksoft">
               <div className="eyebrow mb-2">Need help?</div>
-              <p className="text-xs">Check our documentation or contact support for assistance.</p>
+              <p className="text-xs">
+                Read the{" "}
+                <Link href="/about" className="underline underline-offset-2 text-cobalt hover:text-vermilion transition">
+                  About page
+                </Link>{" "}
+                or{" "}
+                <Link href="/contact" className="underline underline-offset-2 text-cobalt hover:text-vermilion transition">
+                  contact support
+                </Link>{" "}
+                for assistance.
+              </p>
             </div>
           </div>
         </div>

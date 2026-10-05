@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { logger } from '@/lib/logger';
 
 export default function Error({
@@ -34,9 +35,9 @@ export default function Error({
           <button onClick={reset} className="neo-btn neo-btn-accent rounded-sm">
             Try again
           </button>
-          <a href="/" className="neo-btn rounded-sm !bg-cream !text-ink">
+          <Link href="/" className="neo-btn rounded-sm !bg-cream !text-ink">
             Go home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

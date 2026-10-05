@@ -1,10 +1,12 @@
 import { NewsprintPage } from "@/components/newsprint-page";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "About Us — PDFToolsHub",
+export const metadata = pageMetadata({
+  title: "About Us",
   description:
     "The story behind PDFToolsHub — the self-hosted magazine of PDF utility.",
-};
+  path: "/about",
+});
 
 const features = [
   { k: "26", v: "editors on the block — every common PDF job covered" },

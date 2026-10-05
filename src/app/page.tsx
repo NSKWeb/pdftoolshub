@@ -1,3 +1,12 @@
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Free Online PDF Tools — Merge, Split, Compress & Convert",
+  description:
+    "Twenty-six free online PDF tools: merge, split, compress, rotate, convert, OCR, watermark, redact, and more. No sign-up, files processed securely and deleted after 1 hour.",
+  path: "/",
+});
+
 const toolCategories = [
   {
     name: "Basic Tools",
